@@ -26,6 +26,8 @@
 
   (hl7/parse (get-stored-message 1))
 
+  (hl7/parse (test-message))
+
   (def my-delimiters (-> (test-message) hl7/parse :delimiters))
 
   (hl7/create-message my-delimiters
