@@ -3,21 +3,12 @@
             [com.nervestaple.hl7-parser.message :as hl7-message]
             [clojure.string :as string]
             [clojure.java.io :as io])
-  (:import
-   (java.util Date)))
+  (:import [java.util Date]))
 
-(defn test-message []
-  (str "MSH|^~\\&|AcmeHIS|StJohn|CATH|StJohn|20061019172719||ORM^O01|"
-       (. (new Date) getTime) "|P|2.3" (char hl7/ASCII_CR)
-       "PID|||20301||Durden^Tyler^^^Mr.||19700312|M|||88 Punchward Dr.^^Los Angeles^CA^11221^USA|||||||"(char hl7/ASCII_CR)
-       "PV1||O|OP^^||||4652^Paulson^Robert|||OP|||||||||9|||||||||||||||||||||||||20061019172717|20061019172718" (char hl7/ASCII_CR)
-       "ORC|NW|20061019172719" (char hl7/ASCII_CR)
-       "OBR|1|20061019172719||76770^Ultrasound: retroperitoneal^C4|||12349876"))
-
-(defn- main [& args]
-
-
-  )
+(defn fix-message-text [s]
+  (-> s
+   string/trim
+   (string/replace #"(\n|\r)+" (str (char hl7/ASCII_CR)))))
 
 (defn get-stored-message [index]
   (some->> (io/file "./resources/")
@@ -25,17 +16,12 @@
            (filter #(-> % .getName (string/starts-with? (str index))))
            first
            slurp
-           string/trim
-           (#(string/replace % #"(\n|\r)+" (str (char hl7/ASCII_CR))))))
-
+           fix-message-text))
 
 (comment
 
   (hl7/parse (get-stored-message 4))
-
-
   (hl7/parse (get-stored-message 1))
-
   (hl7/parse (test-message))
 
   (def my-delimiters (-> (test-message) hl7/parse :delimiters))
