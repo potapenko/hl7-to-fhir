@@ -1,6 +1,8 @@
 (ns aidbox.messages
   (:require [com.nervestaple.hl7-parser.parser :as hl7]
-            [com.nervestaple.hl7-parser.message :as hl7-message])
+            [com.nervestaple.hl7-parser.message :as hl7-message]
+            [clojure.string :as string]
+            [clojure.java.io :as io])
   (:import
    (java.util Date)))
 
@@ -18,11 +20,19 @@
   )
 
 (defn get-stored-message [index]
-  (slurp (format "./resources/hl7/%s.txt" index)))
-
+  (some->> (io/file "./resources/")
+           file-seq
+           (filter #(-> % .getName (string/starts-with? (str index))))
+           first
+           slurp
+           string/trim
+           (#(string/replace % #"(\n|\r)+" (str (char hl7/ASCII_CR))))))
 
 
 (comment
+
+  (hl7/parse (get-stored-message 4))
+
 
   (hl7/parse (get-stored-message 1))
 
