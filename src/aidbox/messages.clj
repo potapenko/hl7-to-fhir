@@ -27,9 +27,6 @@
       fix-message-text
       hl7/parse))
 
-(defn message->domain [message]
-  )
-
 (comment
 
   (hl7/parse (get-stored-message 4))

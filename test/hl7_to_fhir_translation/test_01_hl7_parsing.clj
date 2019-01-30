@@ -44,7 +44,7 @@ Since an image is worth a thousand words, I’ll try and illustrate the process 
 (fact "Structure"
 
 
-      (-> (messages/get-stored-message 5)
+      (-> (messages/get-stored-message 4)
           hl7/parse
           pprint
           )
