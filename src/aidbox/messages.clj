@@ -27,7 +27,7 @@
       fix-message-text
       hl7/parse))
 
-(defn message->orm [message]
+(defn message->domain [message]
   )
 
 (comment
