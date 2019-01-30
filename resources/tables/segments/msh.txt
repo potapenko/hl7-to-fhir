@@ -1,7 +1,7 @@
 Message Header (MSH)
 
 Sequence	length	Data Type	Required	Repetition	Name
-1	1	ST	REQ	NO_RPT	Field Seperator
+1	1	ST	REQ	NO_RPT	Field Separator
 2	4	ST	REQ	NO_RPT	Encoding Characters
 3	15	ST	OPT	NO_RPT	Sending Application
 4	20	ST	OPT	NO_RPT	Sending Facility
