@@ -13,12 +13,14 @@
    (string/join (str (char hl7/ASCII_CR)))))
 
 (defn get-stored-message [index]
-  (some->> (io/file "./resources/")
-           file-seq
-           (filter #(-> % .getName (string/starts-with? (str index))))
-           first
-           slurp
-           fix-message-text))
+  (some->>  "hl7"
+            io/resource
+            io/as-file
+            file-seq
+            (filter #(-> % .getName (string/starts-with? (str index))))
+            first
+            slurp
+            fix-message-text))
 
 (defn parse [s]
   (-> s
