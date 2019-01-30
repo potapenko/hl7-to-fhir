@@ -1,0 +1,7 @@
+Notes and Comments (NTE)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	4	SI	OPT	NO_RPT	Set ID
+2	8	ID	OPT	NO_RPT	Source of Comment
+3	64000	TX	REQ	NO_MAX	Comment
+4	60	CE	OPT	NO_RPT	Comment Type

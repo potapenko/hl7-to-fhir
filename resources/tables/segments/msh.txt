@@ -1,0 +1,21 @@
+Message Header (MSH)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	1	ST	REQ	NO_RPT	Field Seperator
+2	4	ST	REQ	NO_RPT	Encoding Characters
+3	15	ST	OPT	NO_RPT	Sending Application
+4	20	ST	OPT	NO_RPT	Sending Facility
+5	15	ST	OPT	NO_RPT	Receiving Application
+6	30	ST	OPT	NO_RPT	Receiving Facility
+7	19	TS	OPT	NO_RPT	Date/Time of Message
+8	40	ST	OPT	NO_RPT	Security
+9	7	ID	REQ	NO_RPT	Message Type
+10	20	ST	REQ	NO_RPT	Message Control ID
+11	1	ID	REQ	NO_RPT	Processing ID
+12	8	NM	REQ	NO_RPT	Version ID
+13	15	NM	OPT	NO_RPT	Sequence Number
+14	180	ST	OPT	NO_RPT	Continuation Pointer
+15	2	ID	OPT	NO_RPT	Accept Acknowledgment Type
+16	2	ID	OPT	NO_RPT	Application Acknowledgment Type
+17	2	ID	OPT	NO_RPT	Country Code
+18	2	ID	OPT	NO_RPT	Character Set

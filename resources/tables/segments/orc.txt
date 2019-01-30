@@ -1,0 +1,27 @@
+Common Order (ORC)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	2	ID	REQ	NO_RPT	Order Control Code
+2	22	EI	OPT	NO_RPT	Placer Order Number
+3	22	EI	OPT	NO_RPT	Filler Order Number
+4	22	EI	OPT	NO_RPT	Placer Group Number
+5	2	ID	OPT	NO_RPT	Order Status
+6	1	ID	OPT	NO_RPT	Response Flag
+7	200	TQ	OPT	NO_RPT	Quantity/Timing
+8	200	CM	REQ	NO_RPT	Parent
+9	26	TS	OPT	NO_RPT	Transaction Date/Time
+10	120	XCN	OPT	NO_MAX	Entered By
+11	120	XCN	OPT	NO_MAX	Verified By
+12	120	XCN	OPT	NO_MAX	Ordering Provider
+13	80	PL	OPT	NO_RPT	Enterer's Location
+14	40	XTN	OPT	NO_RPT	Call Back Phone Number
+15	26	TS	OPT	NO_RPT	Order Effective Date/Time
+16	200	CE	OPT	NO_RPT	Order Control Code Reason
+17	60	CE	OPT	NO_RPT	Entering Organization
+18	60	CE	OPT	NO_RPT	Entering Device
+19	120	XCN	OPT	NO_MAX	Action By
+20	40	CE	OPT	NO_RPT	Advanced Beneficiary Notice Code
+21	60	XON	OPT	NO_MAX	Ordering Facility Name
+22	106	XAD	OPT	NO_MAX	Ordering Facility Address
+23	48	XTN	OPT	NO_MAX	Ordering Facility Phone Number
+24	106	XAD	OPT	NO_MAX	Ordering Provider Address

@@ -1,0 +1,38 @@
+ZCY
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	255	ST	REQ	NO_RPT	Cervical
+2	255	ST	REQ	NO_RPT	Endocervical
+3	255	ST	REQ	NO_RPT	Labia-Vulva
+4	255	ST	REQ	NO_RPT	Vaginal
+5	255	ST	REQ	NO_RPT	Endometrial
+6	255	ST	REQ	NO_RPT	Swab-Spatula
+7	255	ST	REQ	NO_RPT	Brush-Spatula
+8	255	ST	REQ	NO_RPT	Spatula-Alone
+9	255	ST	REQ	NO_RPT	Brush-Alone
+10	255	ST	REQ	NO_RPT	Broom-Alone
+11	255	ST	REQ	NO_RPT	Other Collection Technique
+12	255	ST	REQ	NO_RPT	LMP-Meno Date
+13	255	ST	REQ	NO_RPT	Prev Treatment
+14	255	ST	REQ	NO_RPT	Hyst-Prev Treatment
+15	255	ST	REQ	NO_RPT	Coniza-Prev Treatment
+16	255	ST	REQ	NO_RPT	Colp-BX-Prev Treatment
+17	255	ST	REQ	NO_RPT	Laser Vap-Prev Treatment
+18	255	ST	REQ	NO_RPT	Cyro-Prev Treatment
+19	255	ST	REQ	NO_RPT	Radiation-Prev Treatment
+20	255	ST	REQ	NO_RPT	Dates Results-prev cyto inf
+21	255	ST	REQ	NO_RPT	Pregnant
+22	255	ST	REQ	NO_RPT	Lactating
+23	255	ST	REQ	NO_RPT	Oral Contraceptive
+24	255	ST	REQ	NO_RPT	Menopausal
+25	255	ST	REQ	NO_RPT	Estro-RX
+26	255	ST	REQ	NO_RPT	PMP-Bleeding
+27	255	ST	REQ	NO_RPT	Post-Part
+28	255	ST	REQ	NO_RPT	IUD
+29	255	ST	REQ	NO_RPT	All Other Pat Info
+30	255	ST	REQ	NO_RPT	Negative prev cyto info
+31	255	ST	REQ	NO_RPT	Atypical prev cyto info
+32	255	ST	REQ	NO_RPT	Dysplasia prev cyto info
+33	255	ST	REQ	NO_RPT	Ca-In-Situ prev cyto info
+34	255	ST	REQ	NO_RPT	Invasive prev cyto info
+35	255	ST	REQ	NO_RPT	Other prev cyto info

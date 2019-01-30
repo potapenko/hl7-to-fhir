@@ -1,0 +1,15 @@
+Original Style Query Definition (QRD)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	26	TS	REQ	NO_RPT	Query Date/Time
+2	1	ID	REQ	NO_RPT	Query Format Code - usually: R
+3	1	ID	REQ	NO_RPT	Query Priority - usually: I
+4	10	ST	REQ	NO_RPT	Query ID (unique ID assigned by querying app)
+5	1	ID	OPT	NO_RPT	Deferred Response Type (not used w/ .3 == I)
+6	26	TS	OPT	NO_RPT	Deferred Response Date/Time (not used w/ .3 == I)
+7	10	CQ	REQ	NO_RPT	Quantity Limited Request (not used)
+8	60	XCN	REQ	NO_MAX	Who Subject Filter (Queried Patient information)
+9	60	CE	REQ	NO_MAX	What Subject Filter - usually: VXI
+10	60	CE	REQ	NO_MAX	What Department Data Code (specific for VXI)
+11	20	CM	OPT	NO_MAX	What Data Code Value Qual (result range criteria)
+12	1	ID	OPT	NO_RPT	Query Results Level

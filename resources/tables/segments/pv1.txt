@@ -1,0 +1,55 @@
+Patient Visit (PV1)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	4	SI	OPT	NO_RPT	Set Id
+2	1	ID	REQ	NO_RPT	Patient Class
+3	80	PL	OPT	NO_RPT	Assigned Patient Location
+4	2	IS	OPT	NO_RPT	Admission Type
+5	250	CX	OPT	NO_RPT	Pre-Admit Number
+6	80	PL	OPT	NO_RPT	Prior Patient Location
+7	250	XCN	OPT	NO_MAX	Attending Doctor
+8	250	XCN	OPT	NO_MAX	Refering Doctor
+9	250	XCN	OPT	NO_MAX	Consulting Doctor (use ROL segment)
+10	3	IS	OPT	NO_RPT	Hospital Service
+11	80	PL	OPT	NO_RPT	Temporary Location
+12	2	IS	OPT	NO_RPT	Pre-Admit Test Indicator
+13	2	IS	OPT	NO_RPT	Re-Admission Indicator
+14	6	IS	OPT	NO_RPT	Admit Source
+15	2	IS	OPT	NO_MAX	Ambulatory Status
+16	2	IS	OPT	NO_RPT	VIP Indicators
+17	250	XCN	OPT	NO_MAX	Admitting Doctor
+18	2	IS	OPT	NO_RPT	Patient Type
+19	250	CX	OPT	NO_RPT	Visit Number
+20	50	FC	OPT	NO_MAX	Financial Class
+21	2	IS	OPT	NO_RPT	Charge Price Indicator
+22	2	IS	OPT	NO_RPT	Courtesy Code
+23	2	IS	OPT	NO_RPT	Credit Rating
+24	2	IS	OPT	NO_MAX	Contract Code
+25	8	DT	OPT	NO_MAX	Contract Effective Date
+26	12	NM	OPT	NO_MAX	Contract Amount
+27	3	NM	OPT	NO_MAX	Contract Period
+28	2	IS	OPT	NO_RPT	Interest Code
+29	4	IS	OPT	NO_RPT	Transfer to Bad Debt Code
+30	8	DT	OPT	NO_RPT	Transfer to Bad Debt Date
+31	10	IS	OPT	NO_RPT	Bad Debt Agency Code
+32	12	NM	OPT	NO_RPT	Bad Debt Transfer Amount
+33	12	NM	OPT	NO_RPT	Bad Debt Recovery Amount
+34	1	IS	OPT	NO_RPT	Delete Account Indicator
+35	8	DT	OPT	NO_RPT	Delete Account Date
+36	3	IS	OPT	NO_RPT	Discharge Disposition
+37	47	DLD	OPT	NO_RPT	Discharged to Location
+38	250	CE	OPT	NO_RPT	Diet Type
+39	2	IS	OPT	NO_RPT	Servicing Facility
+40	1	IS	OPT	NO_RPT	Bed Status (not used)
+41	2	IS	OPT	NO_RPT	Account Status
+42	80	PL	OPT	NO_RPT	Pending Location
+43	80	PL	OPT	NO_RPT	Prior Temporary Location
+44	26	TS	OPT	NO_RPT	Admit Date/Time
+45	26	TS	OPT	NO_MAX	Discharge Date/Time
+46	12	NM	OPT	NO_RPT	Current Patient Balance
+47	12	NM	OPT	NO_RPT	Total Charges
+48	12	NM	OPT	NO_RPT	Total Adjustments
+49	12	NM	OPT	NO_RPT	Total Payments
+50	250	CX	OPT	NO_RPT	Alternate Visit ID
+51	1	IS	OPT	NO_RPT	Visit Indicator
+52	250	XCN	OPT	NO_MAX	Other Healthcare Provider

@@ -1,0 +1,75 @@
+Insurance - Additional Information (IN2)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	59	CX	OPT	NO_MAX	Insured’s Employee ID
+2	11	ST	OPT	NO_RPT	Insured’s Social Security Number
+3	130	XCN	OPT	NO_MAX	Insured’s Employer’s Name and ID
+4	1	IS	OPT	NO_RPT	Employer Information Data
+5	1	IS	OPT	NO_MAX	Mail Claim Party
+6	15	ST	OPT	NO_RPT	Medicare Health Ins Card Number
+7	48	XPN	OPT	NO_MAX	Medicaid Case Name
+8	15	ST	OPT	NO_RPT	Medicaid Case Number
+9	48	XPN	OPT	NO_MAX	Military Sponsor Name
+10	20	ST	OPT	NO_RPT	Military ID Number
+11	80	CE	OPT	NO_RPT	Dependent Of Military Recipient
+12	25	ST	OPT	NO_RPT	Military Organization
+13	25	ST	OPT	NO_RPT	Military Station
+14	14	IS	OPT	NO_RPT	Military Service
+15	2	IS	OPT	NO_RPT	Military Rank/Grade
+16	3	IS	OPT	NO_RPT	Military Status
+17	8	DT	OPT	NO_RPT	Military Retire Date
+18	1	ID	OPT	NO_RPT	Military Non-Avail Cert On File
+19	1	ID	OPT	NO_RPT	Baby Coverage
+20	1	ID	OPT	NO_RPT	Combine Baby Bill
+21	1	ST	OPT	NO_RPT	Blood Deductible
+22	48	XPN	OPT	NO_MAX	Special Coverage Approval Name
+23	30	ST	OPT	NO_RPT	Special Coverage Approval Title
+24	8	IS	OPT	NO_MAX	Non-Covered Insurance Code
+25	59	CX	OPT	NO_MAX	Payor ID
+26	59	CX	OPT	NO_MAX	Payor Subscriber ID
+27	1	IS	OPT	NO_RPT	Eligibility Source
+28	25	CM	OPT	NO_MAX	Room Coverage Type/Amount
+29	25	CM	OPT	NO_MAX	Policy Type/Amount
+30	25	CM	OPT	NO_RPT	Daily Deductible
+31	2	IS	OPT	NO_RPT	Living Dependency
+32	2	IS	OPT	NO_MAX	Ambulatory Status
+33	80	CE	OPT	NO_MAX	Citizenship
+34	60	CE	OPT	NO_RPT	Primary Language
+35	2	IS	OPT	NO_RPT	Living Arrangement
+36	80	CE	OPT	NO_RPT	Publicity Code
+37	1	ID	OPT	NO_RPT	Protection Indicator
+38	2	IS	OPT	NO_RPT	Student Indicator
+39	80	CE	OPT	NO_RPT	Religion
+40	48	XPN	OPT	NO_MAX	Mother’s Maiden Name
+41	80	CE	OPT	NO_RPT	Nationality
+42	80	CE	OPT	NO_MAX	Ethnic Group
+43	80	CE	OPT	NO_MAX	Marital Status
+44	8	DT	OPT	NO_RPT	Insured’s Employment Start Date
+45	8	DT	OPT	NO_RPT	Employment Stop Date
+46	20	ST	OPT	NO_RPT	Job Title
+47	20	JCC	OPT	NO_RPT	Job Code/Class
+48	2	IS	OPT	NO_RPT	Job Status
+49	48	XPN	OPT	NO_MAX	Employer Contact Person Name
+50	40	XTN	OPT	NO_MAX	Employer Contact Person Phone Number
+51	2	IS	OPT	NO_RPT	Employer Contact Reason
+52	48	XPN	OPT	NO_MAX	Insured’s Contact Person’s Name
+53	40	XTN	OPT	NO_MAX	Insured’s Contact Person Phone Number
+54	2	IS	OPT	NO_MAX	Insured’s Contact Person Reason
+55	8	DT	OPT	NO_RPT	Relationship To The Patient Start Date
+56	8	DT	OPT	NO_MAX	Relationship To The Patient Stop Date
+57	2	IS	OPT	NO_RPT	Insurance Co. Contact Reason
+58	40	XTN	OPT	NO_RPT	Insurance Co Contact Phone Number
+59	2	IS	OPT	NO_RPT	Policy Scope
+60	2	IS	OPT	NO_RPT	Policy Source
+61	60	CX	OPT	NO_RPT	Patient Member Number
+62	80	CE	OPT	NO_RPT	Guarantor’s Relationship To Insured
+63	40	XTN	OPT	NO_MAX	Insured’s Phone Number - Home
+64	40	XTN	OPT	NO_MAX	Insured’s Employer Phone Number
+65	60	CE	OPT	NO_RPT	Military Handicapped Program
+66	1	ID	OPT	NO_RPT	Suspend Flag
+67	1	ID	OPT	NO_RPT	Copay Limit Flag
+68	1	ID	OPT	NO_RPT	Stoploss Limit Flag
+69	130	XON	OPT	NO_MAX	Insured Organization Name And ID
+70	130	XON	OPT	NO_MAX	Insured Employer Organization Name And ID
+71	80	CE	OPT	NO_MAX	Race
+72	60	CE	OPT	NO_RPT	HCFA Patient’s Relationship to Insured

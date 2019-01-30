@@ -1,0 +1,6 @@
+Resource Group (RGS)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	4	SI	OPT	NO_RPT	Set ID
+2	3	ID	OPT	NO_RPT	Segment Action Code
+3	200	CE	OPT	NO_RPT	Resource Group ID

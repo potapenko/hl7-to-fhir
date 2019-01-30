@@ -1,0 +1,58 @@
+Guarantor (GT1)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	4	SI	REQ	NO_RPT	Set ID - Guarantor
+2	20	ID	OPT	NO_MAX	Guarantor Number
+3	48	PN	REQ	NO_MAX	Guarantor Name
+4	48	PN	OPT	NO_MAX	Guarantor Spouse Name
+5	106	AD	OPT	NO_MAX	Guarantor Address
+6	40	TN	OPT	NO_MAX	Guarantor Phone - Home
+7	40	TN	OPT	NO_MAX	Guarantor Phone - Bus.
+8	8	DT	OPT	NO_RPT	Guarantor Date of Birth
+9	1	ID	OPT	NO_RPT	Guarantor Sex
+10	2	ID	OPT	NO_RPT	Guarantor Type
+11	2	ID	OPT	NO_RPT	Guarantor Relationship
+12	11	ST	OPT	NO_RPT	Guarantor SSN
+13	8	DT	OPT	NO_RPT	Guarantor Date - Begin
+14	8	DT	OPT	NO_RPT	Guarantor Date - End
+15	2	NM	OPT	NO_RPT	Guarantor Priority
+16	45	ST	OPT	NO_MAX	Guarantor Employer Name
+17	106	AD	OPT	NO_MAX	Guarantor Employer Addr
+18	40	TN	OPT	NO_MAX	Guarantor Employer Phone
+19	20	ST	OPT	NO_MAX	Guarantor Employee ID #
+20	2	ID	OPT	NO_RPT	Guarantor Employmt Status
+21	130	XON	OPT	NO_MAX	Guarantor Organization Name
+22	1	ID	OPT	NO_RPT	Guarantor Billing Hold Flag
+23	80	CE	OPT	NO_RPT	Guarantor Credit Rating Code
+24	26	TS	OPT	NO_RPT	Guarantor Death Date And Time
+25	1	ID	OPT	NO_RPT	Guarantor Death Flag
+26	80	CE	OPT	NO_RPT	Guarantor Charge Adjustment Code
+27	10	CP	OPT	NO_RPT	Guarantor Household Annual Income
+28	3	NM	OPT	NO_RPT	Guarantor Household Size
+29	20	CX	OPT	NO_MAX	Guarantor Employer ID Number
+30	80	CE	OPT	NO_RPT	Guarantor Marital Status Code
+31	8	DT	OPT	NO_RPT	Guarantor Hire Effective Date
+32	8	DT	OPT	NO_RPT	Employment Stop Date
+33	2	IS	OPT	NO_RPT	Living Dependency
+34	2	IS	OPT	NO_MAX	Ambulatory Status
+35	80	CE	OPT	NO_MAX	Citizenship
+36	60	CE	OPT	NO_RPT	Primary Language
+37	2	IS	OPT	NO_RPT	Living Arrangement
+38	80	CE	OPT	NO_RPT	Publicity Code
+39	1	ID	OPT	NO_RPT	Protection Indicator
+40	2	IS	OPT	NO_RPT	Student Indicator
+41	80	CE	OPT	NO_RPT	Religion
+42	48	XPN	OPT	NO_MAX	Mother's Maiden Name
+43	80	CE	OPT	NO_RPT	Nationality
+44	80	CE	OPT	NO_MAX	Ethnic Group
+45	48	XPN	OPT	NO_MAX	Contact Person's Name
+46	40	XTN	OPT	NO_MAX	Contact Person's Telephone Number
+47	80	CE	OPT	NO_RPT	Contact Reason
+48	2	IS	OPT	NO_RPT	Contact Relationship
+49	20	ST	OPT	NO_RPT	Job Title
+50	20	JCC	OPT	NO_RPT	Job Code/Class
+51	130	XON	OPT	NO_MAX	Guarantor Employer's Organization Name
+52	2	IS	OPT	NO_RPT	Handicap
+53	2	IS	OPT	NO_RPT	Job Status
+54	50	FC	OPT	NO_RPT	Guarantor Financial Class
+55	80	CE	OPT	NO_MAX	Guarantor Race

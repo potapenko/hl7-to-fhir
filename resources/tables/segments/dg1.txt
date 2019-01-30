@@ -1,0 +1,19 @@
+Diagnosis (DG1)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	4	SI	REQ	NO_RPT	Set ID - Diagnosis
+2	2	ID	REQ	NO_RPT	Diagnosis Coding Method
+3	10	ID	OPT	NO_RPT	Diagnosis Code
+4	40	ST	OPT	NO_RPT	Diagnosis Description
+5	19	TS	OPT	NO_RPT	Diagnosis Date/Time
+6	2	ID	REQ	NO_RPT	Diagnosis/DRG Type
+7	4	ST	OPT	NO_RPT	Major Diagnostic Category
+8	4	ID	OPT	NO_RPT	Diagnostic Related Group
+9	2	ID	OPT	NO_RPT	DRG Approval Indicator
+10	2	ID	OPT	NO_RPT	DRG Grouper Review Code
+11	2	ID	OPT	NO_RPT	Outlier Type
+12	3	NM	OPT	NO_RPT	Outlier Days
+13	12	NM	OPT	NO_RPT	Outlier Cost
+14	4	ST	OPT	NO_RPT	Grouper Version and Type
+15	2	NM	OPT	NO_RPT	Diagnosis/DRG priority
+16	36	TX	OPT	NO_RPT	Diagnosing clinician

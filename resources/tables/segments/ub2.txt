@@ -1,0 +1,20 @@
+UB92 Data (UB2)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	4	SI	OPT	NO_RPT	Set ID - UB2
+2	3	ST	OPT	NO_MAX	Co-Insurance Days
+3	2	IS	OPT	NO_RPT	Condition Code
+4	3	ST	OPT	NO_RPT	Covered Days
+5	4	ST	OPT	NO_RPT	Non-Covered Days
+6	11	CM	OPT	NO_MAX	Value Amount & Code
+7	11	CM	OPT	NO_MAX	Occurrence Code & Date
+8	28	CM	OPT	NO_MAX	Occurrence Span Code/Dates
+9	29	ST	OPT	NO_MAX	UB92 Locator 2 (State)
+10	12	ST	OPT	NO_MAX	UB92 Locator 11 (State)
+11	5	ST	OPT	NO_RPT	UB92 Locator 31 (National)
+12	23	ST	OPT	NO_MAX	Document Control Number
+13	4	ST	OPT	NO_MAX	UB92 Locator 49 (National)
+14	14	ST	OPT	NO_MAX	UB92 Locator 56 (State)
+15	27	ST	OPT	NO_RPT	UB92 Locator 57 (National)
+16	2	ST	OPT	NO_MAX	UB92 Locator 78 (State)
+17	3	NM	OPT	NO_RPT	Special Visit Count

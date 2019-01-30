@@ -1,0 +1,20 @@
+Observation/Result (OBX)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	4	SI	OPT	NO_RPT	Set ID
+2	3	ID	OPT	NO_RPT	Value Type
+3	80	CE	REQ	NO_RPT	Observation Identifier
+4	20	ST	OPT	NO_RPT	Observation Sub-Id
+5	65536	FT	OPT	NO_RPT	Observation Value
+6	60	CE	OPT	NO_RPT	Units
+7	60	ST	OPT	NO_RPT	Reference Range
+8	5	ID	OPT	NO_RPT	Abnormal Flags
+9	5	NM	OPT	NO_RPT	Probability
+10	2	ID	OPT	NO_RPT	Nature of Abnormal Test
+11	1	ID	REQ	NO_RPT	Observation Result Status
+12	26	TS	OPT	NO_RPT	Date Last Obs Normal Value
+13	20	ST	OPT	NO_RPT	User Defined Access Checks
+14	26	TS	OPT	NO_RPT	Date/Time of the Observation
+15	60	CE	OPT	NO_RPT	Producer's ID
+16	80	XCN	OPT	NO_RPT	Responsible Observer
+17	60	CE	OPT	NO_RPT	Observation Method

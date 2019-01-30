@@ -1,0 +1,39 @@
+ZPA
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	10	CE	OPT	NO_RPT	employee_group
+2	10	CE	OPT	NO_RPT	employee_class
+3	10	CE	OPT	NO_RPT	job_code
+4	10	CE	OPT	NO_RPT	company_code
+5	10	CE	OPT	NO_RPT	cost_center_code
+6	10	CE	OPT	NO_RPT	facility_code
+7	10	CE	OPT	NO_RPT	building_code
+8	10	CE	OPT	NO_RPT	floor_code
+9	26	TS	OPT	NO_RPT	hire_datetime
+10	26	TS	OPT	NO_RPT	rehire_datetime
+11	26	TS	OPT	NO_RPT	retirement_datetime
+12	26	TS	OPT	NO_RPT	termination_datetime
+13	8	CE	OPT	NO_RPT	work_schedule_code
+14	26	TS	OPT	NO_RPT	onboard_datetime
+15	30	ST	OPT	NO_RPT	supervisor_mrn
+16	10	ST	OPT	NO_RPT	supervisor_id
+17	30	ST	OPT	NO_RPT	admin_assist_mrn
+18	10	ST	OPT	NO_RPT	admin_assist_id
+19	100	ST	OPT	NO_RPT	hr_rsn_typ_nm
+20	2	ST	OPT	NO_RPT	hr_actn_typ_cd
+21	100	ST	OPT	NO_RPT	hr_actn_typ_nm
+22	26	TS	OPT	NO_RPT	actn_begin_dt
+23	26	TS	OPT	NO_RPT	actn_end_dt
+24	10	ST	OPT	NO_RPT	clinic_location
+25	10	CE	OPT	NO_RPT	capacity_utilization_level
+26	5	ST	OPT	NO_RPT	hours_worked_per_day
+27	5	ST	OPT	NO_RPT	days_worked_per_week
+28	4	CE	OPT	NO_RPT	status_code
+29	26	TS	OPT	NO_RPT	edl_start_datetime
+30	26	TS	OPT	NO_RPT	edl_end_datetime
+31	5	ST	OPT	NO_RPT	personnel_area_code
+32	5	ST	OPT	NO_RPT	personnel_area_text
+33	10	ST	OPT	NO_RPT	location
+34	50	CE	OPT	NO_RPT	employee_union
+35	20	ST	OPT	NO_RPT	hourlyrate
+36	26	TS	OPT	NO_RPT	seniority_date

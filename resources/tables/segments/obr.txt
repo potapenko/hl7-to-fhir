@@ -1,0 +1,48 @@
+Observation request (OBR)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	4	SI	OPT	NO_RPT	Set ID
+2	22	EI	OPT	NO_RPT	Placer Order Number
+3	22	EI	REQ	NO_RPT	Filler Order Number
+4	200	CE	REQ	NO_RPT	Universal Service ID
+5	2	ID	OPT	NO_RPT	Priority
+6	26	TS	REQ	NO_RPT	Requested Date/Time
+7	26	TS	REQ	NO_RPT	Observation Date/Time
+8	26	TS	OPT	NO_RPT	Observation End Date/Time
+9	20	CQ	OPT	NO_RPT	Collection Volume
+10	60	XCN	OPT	NO_MAX	Collector Identifier
+11	1	ID	OPT	NO_RPT	Specimen Action Code
+12	60	CE	OPT	NO_RPT	Danger Code
+13	300	ST	OPT	NO_RPT	Relevant Clinical Info
+14	26	TS	REQ	NO_RPT	Specimen Received Date/Time
+15	300	CM	OPT	NO_RPT	Specimen Source
+16	120	XCN	OPT	NO_MAX	Ordering Provider
+17	40	XTN	OPT	NO_RPT	Order Callback Phone Number
+18	60	ST	OPT	NO_RPT	Placer Field 1
+19	60	ST	OPT	NO_RPT	Placer Field 2
+20	60	ST	OPT	NO_RPT	Filler Field 1
+21	60	ST	OPT	NO_RPT	Filler Field 2
+22	26	TS	OPT	NO_RPT	Results Rpt/Change Date/Time
+23	40	CM	OPT	NO_RPT	Charge to Practice
+24	10	ID	OPT	NO_RPT	Diagnostice Serv Sect ID
+25	1	ID	OPT	NO_RPT	Result Status
+26	200	CM	OPT	NO_RPT	Parent Result
+27	200	TQ	OPT	NO_MAX	Quantity/Timing
+28	150	XCN	OPT	NO_RPT	Result Copies To
+29	200	CM	OPT	NO_RPT	Parent
+30	20	ID	OPT	NO_RPT	Transportation Mode
+31	300	CE	OPT	NO_MAX	Reason for Study
+32	200	CM	OPT	NO_RPT	Principal Result Interpreter
+33	200	CM	OPT	NO_RPT	Assistant Result Interpreter
+34	200	CM	OPT	NO_RPT	Technician
+35	200	CM	OPT	NO_MAX	Transcriptionist
+36	26	TS	OPT	NO_RPT	Scheduled Date/Time
+37	4	NM	OPT	NO_RPT	Number of Sample Containers
+38	60	CE	OPT	NO_MAX	Transport Logistics of Collected Samples
+39	200	CE	OPT	NO_MAX	Collector's Comment
+40	60	CE	OPT	NO_RPT	Transport Arrangement Responsibility
+41	30	ID	OPT	NO_RPT	Transport Arranged
+42	1	ID	OPT	NO_RPT	Escort Required
+43	200	CE	OPT	NO_MAX	Planned Patient Transport Comment
+44	80	CE	OPT	NO_RPT	Procedure Code
+45	80	CE	OPT	NO_MAX	Procedure Code Modifier

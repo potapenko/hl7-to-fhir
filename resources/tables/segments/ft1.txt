@@ -1,0 +1,29 @@
+Financial Transaction (FT1)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	4	SI	OPT	NO_RPT	1 Set ID - Financial Trans
+2	12	ST	OPT	NO_RPT	2 Transaction ID
+3	5	ST	OPT	NO_RPT	3 Transaction Batch ID
+4	8	DT	REQ	NO_RPT	4 Transaction Date
+5	8	DT	OPT	NO_RPT	5 Transaction Posting Date
+6	8	ID	REQ	NO_RPT	6 Transaction Type
+7	20	ID	REQ	NO_RPT	7 Transaction Code
+8	40	ST	OPT	NO_RPT	8 Transaction Description
+9	40	ST	OPT	NO_RPT	9 Transaction Desc. - Alt
+10	4	NM	OPT	NO_RPT	10 Transaction Quantity
+11	12	NM	OPT	NO_RPT	11 Transaction Amount - Ext.
+12	12	NM	OPT	NO_RPT	12 Transaction Amount - Unit
+13	16	ST	OPT	NO_RPT	13 Department Code
+14	8	ID	OPT	NO_RPT	14 Insurance Plan ID
+15	12	NM	OPT	NO_RPT	15 Insurance Amount
+16	12	ST	OPT	NO_RPT	16 Patient Location
+17	1	ID	OPT	NO_RPT	17 Fee Schedule
+18	2	ID	OPT	NO_RPT	18 Patient Type
+19	8	ID	OPT	NO_RPT	19 Diagnosis Code
+20	60	CN	OPT	NO_RPT	20 Performed by Code
+21	60	CN	OPT	NO_RPT	21 Ordered by Code
+22	12	NM	OPT	NO_RPT	22 Unit Cost
+23	22	EI	OPT	NO_RPT	23 Filler Order Number
+24	120	XCN	OPT	NO_RPT	24 Entered By Code
+25	80	CE	OPT	NO_RPT	25 Procedure Code
+26	80	CE	OPT	NO_RPT	26 Procedure Code Modifier

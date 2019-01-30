@@ -1,0 +1,10 @@
+ZPS
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	255	ST	REQ	NO_RPT	Sequence Number
+2	255	ST	REQ	NO_RPT	Facility Mnemonic
+3	255	ST	REQ	NO_RPT	Facility Name
+4	255	ST	REQ	NO_RPT	Facility Address Info
+5	255	ST	REQ	NO_RPT	Facility Phone num
+6	255	ST	REQ	NO_RPT	Facility Contact
+7	255	ST	REQ	NO_RPT	Facility Director

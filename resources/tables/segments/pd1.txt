@@ -1,0 +1,15 @@
+Patient Additional Demographics (PD1)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	2	IS	OPT	NO_RPT	Living Dependency
+2	2	IS	OPT	NO_RPT	Living Arrangement
+3	90	XON	OPT	NO_RPT	Patient Primary Facility
+4	90	XCN	OPT	NO_RPT	Patient Primary Care Provider Name & ID No.
+5	2	IS	OPT	NO_RPT	Student Indicator
+6	2	IS	0PT	NO_RPT	Handicap
+7	2	IS	OPT	NO_RPT	Living Will
+8	2	IS	OPT	NO_RPT	Organ Donor
+9	1	ID	OPT	NO_RPT	Separate Bill
+10	20	CX	OPT	NO_MAX	Duplicate Patient
+11	80	CE	OPT	NO_RPT	Publicity Code
+12	1	ID	OPT	NO_RPT	Protection Indicator

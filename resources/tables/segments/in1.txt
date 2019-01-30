@@ -1,0 +1,52 @@
+Insurance (IN1)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	4	SI	REQ	NO_RPT	Set ID - Insurance
+2	8	ID	REQ	NO_RPT	Insurance Plan ID
+3	8	ST	REQ	NO_RPT	Insurance Company ID
+4	45	ST	OPT	NO_RPT	Insurance Company Name
+5	106	AD	OPT	NO_RPT	Insurance Company Address
+6	48	PN	OPT	NO_RPT	Insurance Co Contact Pers
+7	40	TN	OPT	NO_RPT	Insurance Co Phone Number
+8	12	ST	OPT	NO_RPT	Group Number
+9	35	ST	OPT	NO_RPT	Group Name
+10	12	ST	OPT	NO_RPT	Insured's Group Emp. ID
+11	45	ST	OPT	NO_RPT	Insured's Group Emp. Name
+12	8	DT	OPT	NO_RPT	Plan Effective Date
+13	8	DT	OPT	NO_RPT	Plan Expiration Date
+14	55	ST	OPT	NO_RPT	Authorization Information
+15	2	ID	OPT	NO_RPT	Plan Type
+16	48	PN	OPT	NO_RPT	Name of Insured
+17	10	ID	OPT	NO_RPT	Insured's Relation to Pat
+18	8	DT	OPT	NO_RPT	Insured's Date of Birth
+19	106	AD	OPT	NO_RPT	Insured's Address
+20	2	ID	OPT	NO_RPT	Assignment of Benefits
+21	2	ID	OPT	NO_RPT	Coordination of Benefits
+22	2	ST	OPT	NO_RPT	Coord. of Ben. Priority
+23	2	ID	OPT	NO_RPT	Notice of Admission Code
+24	8	DT	OPT	NO_RPT	Notice of Admission Date
+25	2	ID	OPT	NO_RPT	Rpt of Eligibility Code
+26	8	DT	OPT	NO_RPT	Rpt of Eligibility Date
+27	2	ID	OPT	NO_RPT	Release Information Code
+28	15	ST	OPT	NO_RPT	Pre-Admit Cert. (PAC)
+29	8	DT	OPT	NO_RPT	Verification Date
+30	60	CM	OPT	NO_RPT	Verification By
+31	2	ID	OPT	NO_RPT	Type of Agreement Code
+32	2	ID	OPT	NO_RPT	Billing Status
+33	4	NM	OPT	NO_RPT	Lifetime Reserve Days
+34	4	NM	OPT	NO_RPT	Delay Before L. R. Day
+35	8	ST	OPT	NO_RPT	Company Plan Code
+36	80	ST	OPT	NO_RPT	Policy Number
+37	12	NM	OPT	NO_RPT	Policy Deductible
+38	12	NM	OPT	NO_RPT	Policy Limit - Amount
+39	4	NM	OPT	NO_RPT	Policy Limit - Days
+40	12	NM	OPT	NO_RPT	Room Rate - Semi-Private
+41	12	NM	OPT	NO_RPT	Room Rate - Private
+42	1	ID	OPT	NO_RPT	Insured's Employ Status
+43	1	ID	OPT	NO_RPT	Insured's Sex
+44	106	XAD	OPT	NO_RPT	Insured's Employer Addr
+45	2	ST	OPT	NO_RPT	Verification Status
+46	8	IS	OPT	NO_RPT	Prior Insurance Plan ID
+47	3	IS	OPT	NO_RPT	Coverage Type
+48	2	IS	OPT	NO_RPT	Handicap
+49	12	CX	OPT	NO_RPT	Insured<92>s ID Number

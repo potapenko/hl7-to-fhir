@@ -1,0 +1,8 @@
+Pharmacy/Treatment Route (RXR)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	60	CE	REQ	NO_RPT	Route (p351 in pdf)
+2	60	CE	OPT	NO_RPT	Site (possibly SNOMED)
+3	60	CE	OPT	NO_RPT	Administration Device (p352 in pdf)
+4	60	CE	OPT	NO_RPT	Administration Method
+5	60	CE	OPT	NO_RPT	Routing Instruction

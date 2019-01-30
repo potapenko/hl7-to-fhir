@@ -1,0 +1,25 @@
+Pharmacy/Treatment Administration (RXA)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	4	NM	REQ	NO_RPT	Give Sub-ID Counter
+2	4	NM	REQ	NO_RPT	Administration Sub-ID Counter
+3	26	TS	REQ	NO_RPT	Date/Time Start of Administration
+4	26	TS	REQ	NO_RPT	Date/Time End of Administration
+5	100	CE	REQ	NO_RPT	Administered Code ^CVX (CDC DB)
+6	20	NM	REQ	NO_RPT	Administered Amount
+7	60	CE	OPT	NO_RPT	Administered Units
+8	60	CE	OPT	NO_RPT	Administered Dosage Form
+9	200	CE	OPT	NO_MAX	Administration Notes
+10	200	XCN	OPT	NO_MAX	Administering Provider
+11	200	CM	OPT	NO_RPT	Administered-at Location
+12	20	ST	OPT	NO_RPT	Administered Per (Time Unit)
+13	20	NM	OPT	NO_RPT	Administered Strength
+14	60	CE	OPT	NO_RPT	Administered Strength Units
+15	20	ST	OPT	NO_MAX	Substance Lot Number
+16	27	TS	OPT	NO_MAX	Substance Expiration Date
+17	60	CE	OPT	NO_MAX	Substance Manufacturer Name ^MVX
+18	200	CE	OPT	NO_MAX	Substance Refusal Reason
+19	200	CE	OPT	NO_MAX	Indication
+20	2	ID	OPT	NO_RPT	Completion Status
+21	2	ID	OPT	NO_RPT	Action Code-RXA
+22	26	TS	OPT	NO_RPT	System Entry Date/Time

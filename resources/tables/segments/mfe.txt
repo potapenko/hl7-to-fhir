@@ -1,0 +1,8 @@
+Master File Entry (MFE)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	3	ID	REQ	NO_RPT	Record-Level Event Code
+2	20	ST	REQ	NO_RPT	MFN Control ID
+3	26	TS	OPT	NO_RPT	Effective Date/Time
+4	200	FT	REQ	NO_MAX	Primary Key Value - MFE
+5	3	ID	REQ	NO_MAX	Primary Key Value Type

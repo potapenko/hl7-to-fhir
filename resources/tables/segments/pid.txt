@@ -1,0 +1,42 @@
+Patiet Identification (PID)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	4	SI	OPT	NO_RPT	Set ID - PID
+2	20	CX	OPT	NO_RPT	Patient ID
+3	250	CX	REQ	NO_MAX	Patient Identifier List
+4	20	CX	OPT	NO_MAX	Alternate Patient ID - PID
+5	250	XPN	REQ	NO_MAX	Patient Name
+6	250	XPN	OPT	NO_MAX	Mother’s Maiden Name
+7	26	TS	OPT	NO_RPT	Date/Time of Birth
+8	1	IS	OPT	NO_RPT	Sex
+9	250	XPN	OPT	NO_MAX	Patient Alias
+10	250	CE	OPT	NO_MAX	Race
+11	250	XAD	OPT	NO_MAX	Patient Address
+12	4	IS	OPT	NO_RPT	County Code
+13	250	XTN	OPT	NO_MAX	Phone Number - Home
+14	250	XTN	OPT	NO_MAX	Phone Number - Business
+15	250	CE	OPT	NO_RPT	Primary Language
+16	250	CE	OPT	NO_RPT	Marital Status
+17	250	CE	OPT	NO_RPT	Religion
+18	250	CX	OPT	NO_RPT	Patient Account Number
+19	16	ST	OPT	NO_RPT	SSN Number - Patient (not used)
+20	25	DLN	OPT	NO_RPT	Driver's License Number - Patient (not used)
+21	250	CX	OPT	NO_MAX	Mother's Identifier
+22	250	CE	OPT	NO_MAX	Ethnic Group
+23	250	ST	OPT	NO_RPT	Birth Place
+24	1	ID	OPT	NO_RPT	Multiple Birth Indicator
+25	2	NM	OPT	NO_RPT	Birth Order
+26	250	CE	OPT	NO_MAX	Citizenship
+27	250	CE	OPT	NO_RPT	Veterans Military Status
+28	250	CE	OPT	NO_RPT	Nationality
+29	26	TS	OPT	NO_RPT	Patient Death Date and Time
+30	1	ID	OPT	NO_RPT	Patient Death Indicator
+31	1	ID	OPT	NO_RPT	Identity Unknown Indicator
+32	20	IS	OPT	NO_MAX	Identity Reliability Code
+33	26	TS	OPT	NO_RPT	Last Update Date/Time
+34	241	HD	OPT	NO_RPT	Last Update Facility
+35	250	CE	OPT	NO_RPT	Species Code
+36	250	CE	OPT	NO_RPT	Breed Code
+37	80	ST	OPT	NO_RPT	Strain
+38	250	CE	OPT	NO_MAX	Production Class Code
+39	250	CWE	OPT	NO_MAX	Tribal Citizenship

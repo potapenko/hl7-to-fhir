@@ -1,0 +1,4 @@
+Error (ERR)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	80	ID	REQ	NO_MAX	Error Code and Location

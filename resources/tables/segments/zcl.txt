@@ -1,0 +1,7 @@
+ZCL
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	255	ST	OPT	NO_RPT	Height
+2	255	ST	OPT	NO_RPT	Weight
+3	255	ST	OPT	NO_RPT	Urine Collection
+4	255	ST	OPT	NO_RPT	Fasting

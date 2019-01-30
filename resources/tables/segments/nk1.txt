@@ -1,0 +1,40 @@
+Next of Kin/Associated Parties (NK1)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	4	SI	REQ	NO_RPT	Set ID - NK1
+2	48	XPN	OPT	NO_MAX	Name
+3	60	CE	OPT	NO_RPT	Relationship
+4	106	XAD	OPT	NO_MAX	Address
+5	40	XTN	OPT	NO_MAX	Phone Number
+6	40	XTN	OPT	NO_MAX	Business Phone Number
+7	60	CE	OPT	NO_RPT	Contact Role
+8	8	DT	OPT	NO_RPT	Start Date
+9	8	DT	OPT	NO_RPT	End Date
+10	60	ST	OPT	NO_RPT	Next of Kin / Associated Parties Job Title
+11	20	JCC	OPT	NO_RPT	Next of Kin / Associated Parties JobCode/Class
+12	20	CX	OPT	NO_RPT	Next of Kin / Associated Parties EmployeeNumber
+13	90	XON	OPT	NO_MAX	Organization Name - NK1
+14	80	CE	OPT	NO_RPT	Marital Status
+15	1	IS	OPT	NO_RPT	Sex
+16	26	TS	OPT	NO_RPT	Date/Time of Birth
+17	2	IS	OPT	NO_MAX	Living Dependency
+18	2	IS	OPT	NO_MAX	Ambulatory Status
+19	80	CE	OPT	NO_MAX	Citizenship
+20	60	CE	OPT	NO_RPT	Primary Language
+21	2	IS	OPT	NO_RPT	Living Arrangement
+22	80	CE	OPT	NO_RPT	Publicity Code
+23	1	ID	OPT	NO_RPT	Protection Indicator
+24	2	IS	OPT	NO_RPT	Student Indicator
+24	80	CE	OPT	NO_RPT	Religion
+25	48	XPN	OPT	NO_MAX	Mother's Maiden Name
+26	80	CE	OPT	NO_RPT	Nationality
+27	80	CE	OPT	NO_MAX	Ethnic Group
+28	80	CE	OPT	NO_MAX	Contact Reason
+29	48	XPN	OPT	NO_MAX	Contact Person's Name
+30	40	XTN	OPT	NO_MAX	Contact Person's Telephone Number
+31	106	XAD	OPT	NO_MAX	Contact Person's Address
+32	32	CX	OPT	NO_MAX	Next of Kin/Associated Party's Identifiers
+33	2	IS	OPT	NO_RPT	Job Status
+34	80	CE	OPT	NO_MAX	Race
+35	2	IS	OPT	NO_RPT	Handicap
+36	16	ST	OPT	NO_RPT	Contact Person Social Security Number

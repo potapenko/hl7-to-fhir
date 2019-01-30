@@ -1,0 +1,9 @@
+Accident (ACC)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	26	TS	OPT	NO_RPT	Accident Date/Time
+2	60	CE	OPT	NO_RPT	Accident Code
+3	25	ST	OPT	NO_RPT	Accident Location
+4	60	CE	OPT	NO_RPT	Auto Accident State
+5	1	ID	OPT	NO_RPT	Accident Job Related Indicator
+6	12	ID	OPT	NO_RPT	Accident Death Indicator

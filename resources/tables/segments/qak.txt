@@ -1,0 +1,6 @@
+Query Acknowledgement (QAK)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	32	ST	OPT	NO_RPT	Query Tag
+2	60	CE	REQ	NO_RPT	Event Identifier
+3	256	QIP	OPT	NO_MAX	Input Parameter List

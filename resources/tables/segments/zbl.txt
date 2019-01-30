@@ -1,0 +1,8 @@
+ZBL
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	255	ST	REQ	NO_RPT	Patient Race
+2	255	ST	REQ	NO_RPT	Hispanic
+3	255	ST	REQ	NO_RPT	Blood Lead Type
+4	255	ST	OPT	NO_RPT	Blood Lead Purpose
+5	255	ST	OPT	NO_RPT	Blood Lead County

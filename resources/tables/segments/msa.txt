@@ -1,0 +1,8 @@
+Message Acknowledgement (MSA)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	2	ID	REQ	NO_RPT	Acknowledgement Code
+2	20	ST	REQ	NO_RPT	Message Control ID
+3	80	ST	OPT	NO_RPT	Text Message
+4	15	NM	OPT	NO_RPT	Expected Sequence Number
+5	1	ID	OPT	NO_RPT	Delayed Ack Type

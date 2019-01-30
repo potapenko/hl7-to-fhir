@@ -1,0 +1,28 @@
+Insurance - Additional Information, Certification (IN3)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	4	SI	REQ	NO_RPT	Set ID - IN3
+2	59	CX	OPT	NO_RPT	Certification Number
+3	60	XCN	OPT	NO_MAX	Certified By
+4	1	ID	OPT	NO_RPT	Certification Required
+5	10	CM	OPT	NO_RPT	Penalty
+6	26	TS	OPT	NO_RPT	Certification Date/Time
+7	26	TS	OPT	NO_RPT	Certification Modify Date/Time
+8	60	XCN	OPT	NO_MAX	Operator
+9	8	DT	OPT	NO_RPT	Certification Begin Date
+10	8	DT	OPT	NO_RPT	Certification End Date
+11	3	CM	OPT	NO_RPT	Days
+12	60	CE	OPT	NO_RPT	Non-Concur Code/Description
+13	26	TS	OPT	NO_RPT	Non-Concur Effective Date/Time
+14	60	XCN	OPT	NO_MAX	Physician Reviewer
+15	48	ST	OPT	NO_RPT	Certification Contact
+16	40	XTN	OPT	NO_MAX	Certification Contact Phone Number
+17	60	CE	OPT	NO_RPT	Appeal Reason
+18	60	CE	OPT	NO_RPT	Certification Agency
+19	40	XTN	OPT	NO_MAX	Certification Agency Phone Number
+20	40	CM	OPT	NO_MAX	Pre-Certification Req/Window
+21	48	ST	OPT	NO_RPT	Case Manager
+22	8	DT	OPT	NO_RPT	Second Opinion Date
+23	1	IS	OPT	NO_RPT	Second Opinion Status
+24	1	IS	OPT	NO_MAX	Second Opinion Documentation Received
+25	60	XCN	OPT	NO_MAX	Second Opinion Physician

@@ -1,0 +1,5 @@
+ZDG
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	20	ST	REQ	NO_RPT	Debug Message Type
+2	500	ST	OPT	NO_RPT	Debug Message

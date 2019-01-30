@@ -1,0 +1,9 @@
+Master File Identification (MFI)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	60	CE	REQ	NO_RPT	Master File Identifier
+2	180	HD	OPT	NO_RPT	Master File Application Identifier
+3	3	ID	REQ	NO_RPT	File-Level Event Code
+4	26	TS	OPT	NO_RPT	Entered Date/Time
+5	26	TS	OPT	NO_RPT	Effective Date/Time
+6	2	ID	REQ	NO_RPT	Response Level Code

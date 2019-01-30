@@ -1,0 +1,7 @@
+Event Type (EVN)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	3	ID	REQ	Event Type Code
+2	19	TS	REQ	NO_RPT	Date/Time of Event
+3	19	TS	OPT	NO_RPT	Date/Time Planned Event
+4	3	ID	OPT	NO_RPT	Event Reason Code

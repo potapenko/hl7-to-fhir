@@ -1,0 +1,26 @@
+UB82 (UB1)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	4	SI	OPT	NO_RPT	Set ID - UB1
+2	1	NM	OPT	NO_RPT	Blood Deductible
+3	2	NM	OPT	NO_RPT	Blood Furnished-Pints Of
+4	2	NM	OPT	NO_RPT	Blood Replaced-Pints
+5	2	NM	OPT	NO_RPT	Blood Not Replaced-Pints
+6	2	NM	OPT	NO_RPT	Co-Insurance Days
+7	14	IS	OPT	NO_MAX	Condition Code
+8	3	NM	OPT	NO_RPT	Covered Days -
+9	3	NM	OPT	NO_RPT	Non Covered Days
+10	12	CM	OPT	NO_MAX	Value Amount & Code
+11	2	NM	OPT	NO_RPT	Number Of Grace Days
+12	60	CE	OPT	NO_RPT	Special Program Indicator
+13	60	CE	OPT	NO_RPT	PSRO/UR Approval Indicator
+14	8	DT	OPT	NO_RPT	PSRO/UR Approved Stay-Fm
+15	8	DT	OPT	NO_RPT	PSRO/UR Approved Stay-To
+16	20	CM	OPT	NO_MAX	Occurrence
+17	60	CE	OPT	NO_RPT	Occurrence Span
+18	8	DT	OPT	NO_RPT	Span Start Date
+19	8	DT	OPT	NO_RPT	Span End Date
+20	30	ST	OPT	NO_RPT	UB-82 Locator
+21	7	ST	OPT	NO_RPT	UB-82 Locator
+22	8	ST	OPT	NO_RPT	UB-82 Locator
+23	17	ST	OPT	NO_RPT	UB-82 Locator

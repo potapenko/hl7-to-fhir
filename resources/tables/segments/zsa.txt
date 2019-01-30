@@ -1,0 +1,19 @@
+ZSA
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	255	ST	REQ	NO_RPT	Insulin Dependent
+2	255	ST	REQ	NO_RPT	Gestational Age
+3	255	ST	REQ	NO_RPT	Gest Age by LMP
+4	255	ST	REQ	NO_RPT	Gest Age by Ultrasound
+5	255	ST	REQ	NO_RPT	Gest Age by Est Date of Delivery
+6	255	ST	REQ	NO_RPT	Type of Pregnancy
+7	255	ST	REQ	NO_RPT	Routine Screening
+8	255	ST	REQ	NO_RPT	Prev Neural Tube Defects
+9	255	ST	REQ	NO_RPT	Advanced Maternal Age
+10	255	ST	REQ	NO_RPT	History of Down Syndrome
+11	255	ST	REQ	NO_RPT	Hist of Cystic Fibrosis
+12	255	ST	REQ	NO_RPT	Other Indications
+13	255	ST	REQ	NO_RPT	Hand Written AFP Info
+14	255	ST	REQ	NO_RPT	Reason for Repeat: Elevated
+15	255	ST	REQ	NO_RPT	Early GA
+16	255	ST	REQ	NO_RPT	Hemolyzed

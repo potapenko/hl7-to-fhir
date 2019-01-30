@@ -1,0 +1,4 @@
+ZIL
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	64	ID	OPT	NO_MAX	Dicom Study Ins UID

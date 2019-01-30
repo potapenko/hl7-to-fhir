@@ -1,0 +1,16 @@
+Procedures (PR1)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	4	SI	REQ	NO_MAX	Set ID - Procedure
+2	2	ID	REQ	NO_MAX	Procedure Coding Method
+3	10	ID	REQ	NO_MAX	Procedure Code
+4	40	ST	OPT	NO_MAX	Procedure Description
+5	19	TS	REQ	NO_RPT	Procedure Date/Time
+6	2	ID	REQ	NO_RPT	Procedure Type
+7	4	NM	OPT	NO_RPT	Procedure Minutes
+8	60	CN	OPT	NO_RPT	Anesthesiologist
+9	2	ID	OPT	NO_RPT	Anesthesia Code
+10	4	NM	OPT	NO_RPT	Anesthesia Minutes
+11	60	CN	OPT	NO_RPT	Surgeon
+12	60	CN	OPT	NO_RPT	Resident Code
+13	2	ID	OPT	NO_RPT	Consent Code

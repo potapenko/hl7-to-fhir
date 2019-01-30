@@ -1,0 +1,15 @@
+Appointment Information - Personnel Resource (AIP)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	4	SI	OPT	NO_RPT	Set ID
+2	3	ID	OPT	NO_RPT	Segment Action code
+3	200	XCN	REQ	NO_RPT	Personnel Resource ID
+4	200	CE	OPT	NO_RPT	Resource Role
+5	200	CE	OPT	NO_RPT	Resource Group
+6	26	TS	OPT	NO_RPT	Start Date/Time
+7	20	NM	OPT	NO_RPT	Start Date/Time Offset
+8	200	CE	OPT	NO_RPT	Start Date/Time Offset Units
+9	20	NM	OPT	NO_RPT	Duration
+10	200	CE	OPT	NO_RPT	Duration Units
+11	10	IS	OPT	NO_RPT	Allow Substitution Code
+12	200	CE	OPT	NO_RPT	Filler Status Code

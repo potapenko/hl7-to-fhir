@@ -1,0 +1,17 @@
+Appointment Information - General Resource (AIG)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	4	SI	REQ	NO_RPT	Set ID - AIG
+2	3	ID	OPT	NO_RPT	Segment Action Code
+3	200	CE	REQ	NO_RPT	Resource ID
+4	200	CE	REQ	NO_RPT	Resource Type
+5	200	CE	OPT	NO_MAX	Resource Group
+6	5	NM	OPT	NO_RPT	Resource Quantity
+7	200	CE	OPT	NO_RPT	Resource Quantity Units
+8	26	TS	OPT	NO_RPT	Start Date/Time
+9	20	NM	OPT	NO_RPT	Start Date/Time Offset
+10	200	CE	OPT	NO_RPT	Start Date/Time Offset Units
+11	20	NM	OPT	NO_RPT	Duration
+12	200	CE	OPT	NO_RPT	Duration Units
+13	10	IS	OPT	NO_RPT	Allow Substitution Code
+14	200	CE	OPT	NO_RPT	Filler Status Code

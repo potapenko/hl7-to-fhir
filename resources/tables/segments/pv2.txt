@@ -1,0 +1,40 @@
+Patient Visit - Additional Information (PV2)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	80	PL	REQ	NO_RPT	Prior Pending Location
+2	60	CE	OPT	NO_RPT	Accommodation Code
+3	60	CE	OPT	NO_RPT	Admit Reason
+4	60	CE	OPT	NO_RPT	Transfer Reason
+5	25	ST	OPT	NO_MAX	Patient Valuables
+6	25	ST	OPT	NO_RPT	Patient Valuables Location
+7	2	IS	OPT	NO_RPT	Visit User Code
+8	26	TS	OPT	NO_RPT	Expected Admit Date/Time
+9	26	TS	OPT	NO_RPT	Expected Discharge Date/Time
+10	3	NM	OPT	NO_RPT	Estimated Length of Inpatient Stay
+11	3	NM	OPT	NO_RPT	Actual Length of Inpatient Stay
+12	50	ST	OPT	NO_RPT	Visit Description
+13	90	XCN	OPT	NO_MAX	Referral Source Code
+14	8	DT	OPT	NO_RPT	Previous Service Date
+15	1	ID	OPT	NO_RPT	Employment Illness Related Indicator
+16	1	IS	OPT	NO_RPT	Purge Status Code
+17	8	DT	OPT	NO_RPT	Purge Status Date
+18	2	IS	OPT	NO_RPT	Special Program Code
+19	1	ID	OPT	NO_RPT	Retention Indicator
+20	1	NM	OPT	NO_RPT	Expected Number of Insurance Plans
+21	1	IS	OPT	NO_RPT	Visit Publicity Code
+22	1	ID	OPT	NO_RPT	Visit Protection Indicator
+23	90	XON	OPT	NO_MAX	Clinic Organization Name
+24	2	IS	OPT	NO_RPT	Patient Status Code
+25	1	IS	OPT	NO_RPT	Visit Priority Code
+26	8	DT	OPT	NO_RPT	Previous Treatment Date
+27	2	IS	OPT	NO_RPT	Expected Discharge Disposition
+28	8	DT	OPT	NO_RPT	Signature on File Date
+29	8	DT	OPT	NO_RPT	First Similar Illness Date
+30	80	CE	OPT	NO_RPT	Patient Charge Adjustment Code
+31	2	IS	OPT	NO_RPT	Recurring Service Code
+32	1	ID	OPT	NO_RPT	Billing Media Code
+33	26	TS	OPT	NO_RPT	Expected Surgery Date & Time
+34	1	ID	OPT	NO_RPT	Military Partnership Code
+35	1	ID	OPT	NO_RPT	Military Non-Availability Code
+36	1	ID	OPT	NO_RPT	Newborn Baby Indicator
+37	1	ID	OPT	NO_RPT	Baby Detained Indicator

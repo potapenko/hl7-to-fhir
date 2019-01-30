@@ -8,6 +8,8 @@
 
 (defmulti parse-segment :id)
 
+%s
+
 (defn parse-message [message]
   (->> message
        :segments

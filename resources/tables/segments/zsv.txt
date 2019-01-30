@@ -1,0 +1,10 @@
+ZSV
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	60	CE	OPT	NO_RPT	Unused
+2	60	CE	OPT	NO_RPT	Unused
+3	60	CE	OPT	NO_RPT	Unused
+4	60	CE	OPT	NO_RPT	Unused
+5	60	CE	OPT	NO_RPT	Unused
+6	60	CE	OPT	NO_RPT	Unused
+7	60	CE	OPT	NO_RPT	VFC Code

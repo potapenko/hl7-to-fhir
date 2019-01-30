@@ -1,0 +1,26 @@
+Transcription Document Header (TXA)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	4	SI	REQ	NO_RPT	Set ID- TXA
+2	30	IS	REQ	NO_RPT	Document Type
+3	2	ID	OPT	NO_RPT	Document Content Presentation
+4	26	TS	OPT	NO_RPT	Activity Date/Time
+5	60	XCN	OPT	NO_MAX	Primary Activity Provider Code/Name
+6	26	TS	OPT	NO_RPT	Origination Date/Time
+7	26	TS	OPT	NO_RPT	Transcription Date/Time
+8	26	TS	OPT	NO_MAX	Edit Date/Time
+9	60	XCN	OPT	NO_MAX	Originator Code/Name
+10	60	XCN	OPT	NO_MAX	Assigned Document Authenticator
+11	48	XCN	OPT	NO_MAX	Transcriptionist Code/Name
+12	30	EI	REQ	NO_RPT	Unique Document Number
+13	30	EI	OPT	NO_RPT	Parent Document Number
+14	22	EI	OPT	NO_MAX	Placer Order Number
+15	22	EI	OPT	NO_RPT	Filler Order Number
+16	30	ST	OPT	NO_RPT	Unique Document File Name
+17	2	ID	REQ	NO_RPT	Document Completion Status
+18	2	ID	OPT	NO_RPT	Document Confidentiality Status
+19	2	ID	OPT	NO_RPT	Document Availability Status
+20	2	ID	OPT	NO_RPT	Document Storage Status
+21	30	ST	OPT	NO_RPT	Document Change Reason
+22	60	PPN	OPT	NO_MAX	Authentication Person, Time Stamp
+23	60	XCN	OPT	NO_MAX	Distributed Copies (Code and Name of Recipients)

@@ -1,0 +1,10 @@
+Merge Patient Information (MRG)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	250	CX	REQ	NO_RPT	Prior Patient Identifier List
+2	250	CX	OPT	NO_RPT	Prior Alternate Patient ID
+3	250	CX	OPT	NO_RPT	Prior Patient Account Number
+4	250	CX	OPT	NO_RPT	Prior Patient ID
+5	250	CX	OPT	NO_RPT	Prior Visit Number
+6	250	CX	OPT	NO_RPT	Prior Alternate Visit ID
+7	250	XPN	OPT	NO_RPT	Prior Patient Name

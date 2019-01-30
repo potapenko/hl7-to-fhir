@@ -1,0 +1,22 @@
+ZMF
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	30	ST	OPT	NO_RPT	Account Balance
+2	30	ST	OPT	NO_RPT	Account Balance Forward
+3	30	ST	OPT	NO_RPT	Account Unapplied Credit
+4	30	ST	OPT	NO_RPT	Account Creation Date
+5	30	ST	OPT	NO_RPT	Account Bill Type
+6	30	ST	OPT	NO_RPT	Account Monthly Payment Amount
+7	30	ST	OPT	NO_RPT	Account Date Last Payment
+8	30	ST	OPT	NO_RPT	Account Amount Last Payment
+10	30	ST	OPT	NO_RPT	Account Date Last Bill
+11	30	ST	OPT	NO_RPT	Account Amount Last Statement
+12	30	ST	OPT	NO_RPT	Account YTD Charges
+13	30	ST	OPT	NO_RPT	Account Patient Due AR
+14	30	ST	OPT	NO_RPT	Account Account Status
+15	30	ST	OPT	NO_RPT	Account Discount Percent
+16	30	ST	OPT	NO_RPT	Account Date Last Procedure Posting
+17	30	ST	OPT	NO_RPT	Account Patient Class
+18	30	ST	OPT	NO_RPT	Account Patient Hist Balance
+19	30	ST	OPT	NO_RPT	Account Days before Enter Call
+20	30	ST	OPT	NO_RPT	Account Collection Priority

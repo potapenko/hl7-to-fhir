@@ -1,0 +1,12 @@
+Original Style Query Filter (QRF)
+
+Sequence	length	Data Type	Required	Repetition	Name
+1	20	ST	REQ	NO_MAX	Where Subject Filter (department,system,etc: LAB~HEMO)
+2	26	TS	OPT	NO_RPT	When Data Start Date/Time - Backwards only
+3	26	TS	OPT	NO_RPT	When Data End Date/Time - Backwards only
+4	60	ST	OPT	NO_MAX	What User Qualifier (extra limitation)
+5	60	ST	OPT	NO_MAX	Other QRY Subject Filter (limit of 10 repeats for VXQ) see hl7_notes.txt
+6	12	ID	OPT	NO_MAX	Which Date/Time Qualifier (range of .2/.3) - usually: ANY
+7	12	ID	OPT	NO_MAX	Which Date/Time Status Qualifier - usually: CFN or FIN (current final value, final only)
+8	12	ID	OPT	NO_MAX	Date/Time Selection Qualifier (value ordering (1ST,LST,ALL,REV) - usually:REV (reverse cronological)
+9	60	TQ	OPT	NO_RPT	When Quantity/Timing Qualifier (replaces .2/.3)
