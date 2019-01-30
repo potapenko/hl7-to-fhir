@@ -23,44 +23,51 @@ Since an image is worth a thousand words, I’ll try and illustrate the process 
   (let [[_
          [sending-app] [sending-facility]
          [receiving-app] [receiving-facility]
-         [when]
+         [date]
          _
          [msg-type event-type]
          [msg-id]
          _ _] (->> segment :fields (map :content))]
-    {:from       {:app sending-app :facility sending-facility}
-     :to         {:app receiving-app :facility receiving-facility}
-     :date       (f/parse hl7-time-format when)
-     :msg-type   (keyword msg-type)
-     :envet-type (keyword event-type)
-     :msg-id     msg-id}))
+    [:header
+     {:sending    {:app sending-app :facility sending-facility}
+      :receiving  {:app receiving-app :facility receiving-facility}
+      :date       (when date (f/parse hl7-time-format date))
+      :msg-type   (keyword msg-type)
+      :envet-type (keyword event-type)
+      :msg-id     msg-id}]))
 
 (defmethod parse-segment "EVN" [segment]
-  "not implemented")
+  ["not implemented" segment])
 
 (defmethod parse-segment "EVN" [segment]
-  "not implemented")
+  ["not implemented" segment])
 
 (defmethod parse-segment "PID" [segment]
-  "not implemented")
+  ["not implemented" segment])
 
 (defmethod parse-segment "NK1" [segment]
-  "not implemented")
+  ["not implemented" segment])
 
 (defmethod parse-segment "PV1" [segment]
-  "not implemented")
+  ["not implemented" segment])
 
-(defmethod parse-segment nil [segment]
-  "not implemented")
+(defmethod parse-segment "NTE" [segment]
+  ["not implemented" segment])
+
+(defmethod parse-segment "BTE" [segment]
+  ["not implemented" segment])
 
 (defmethod parse-segment :default [segment]
-  "can't parse")
+  ["not implemented" segment])
+
+(defmethod parse-segment :default [segment]
+  ["not implemented" segment])
 
 (defn parse-message [message]
   (->> message
        :segments
-       (map parse-segment)))
-
+       (map parse-segment)
+       (into {})))
 
 (comment
 
@@ -68,7 +75,7 @@ Since an image is worth a thousand words, I’ll try and illustrate the process 
 
   (first (parse-message (hl7/parse (messages/get-stored-message 4))))
 
-  (first (parse-message (hl7/parse (messages/get-stored-message 6))))
+  (second (parse-message (hl7/parse (messages/get-stored-message 6))))
 
 
 
