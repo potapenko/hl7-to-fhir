@@ -177,7 +177,6 @@
       :patient-address patient-address
       :county-code county-code
       :phone-number phone-number
-      :phone-number phone-number
       :primary-language primary-language
       :marital-status marital-status
       :religion religion
@@ -298,7 +297,6 @@
       :consulting-doctor consulting-doctor
       :hospital-service hospital-service
       :temporary-location temporary-location
-      :pre pre
       :re re
       :admit-source admit-source
       :ambulatory-status ambulatory-status
@@ -494,7 +492,6 @@
       :transaction-desc transaction-desc
       :transaction-quantity transaction-quantity
       :transaction-amount transaction-amount
-      :transaction-amount transaction-amount
       :department-code department-code
       :insurance-plan-id insurance-plan-id
       :insurance-amount insurance-amount
@@ -574,13 +571,11 @@
       :guarantor-spouse-name guarantor-spouse-name
       :guarantor-address guarantor-address
       :guarantor-phone guarantor-phone
-      :guarantor-phone guarantor-phone
       :guarantor-date-of-birth guarantor-date-of-birth
       :guarantor-sex guarantor-sex
       :guarantor-type guarantor-type
       :guarantor-relationship guarantor-relationship
       :guarantor-ssn guarantor-ssn
-      :guarantor-date guarantor-date
       :guarantor-date guarantor-date
       :guarantor-priority guarantor-priority
       :guarantor-employer-name guarantor-employer-name
@@ -686,7 +681,6 @@
       :group-number group-number
       :group-name group-name
       :insured's-group-emp insured's-group-emp
-      :insured's-group-emp insured's-group-emp
       :plan-effective-date plan-effective-date
       :plan-expiration-date plan-expiration-date
       :authorization-information authorization-information
@@ -714,8 +708,6 @@
       :policy-number policy-number
       :policy-deductible policy-deductible
       :policy-limit policy-limit
-      :policy-limit policy-limit
-      :room-rate room-rate
       :room-rate room-rate
       :insured's-employ-status insured's-employ-status
       :insured's-sex insured's-sex
@@ -913,7 +905,6 @@
       :certification-begin-date certification-begin-date
       :certification-end-date certification-end-date
       :days days
-      :non non
       :non non
       :physician-reviewer physician-reviewer
       :certification-contact certification-contact
@@ -1184,14 +1175,10 @@
       :special-program-indicator special-program-indicator
       :psro-ur-approval-indicator psro-ur-approval-indicator
       :psro-ur-approved-stay psro-ur-approved-stay
-      :psro-ur-approved-stay psro-ur-approved-stay
       :occurrence occurrence
       :occurrence-span occurrence-span
       :span-start-date span-start-date
       :span-end-date span-end-date
-      :ub ub
-      :ub ub
-      :ub ub
       :ub ub}]))
 
 ;; UB92 Data

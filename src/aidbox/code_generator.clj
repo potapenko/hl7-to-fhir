@@ -57,6 +57,7 @@
                   (->> fields
                        (map (fn [{:keys [id] :as field}]
                               (str id " " (prepare-field-data field))))
+                       distinct
                        (string/join "\n      ")
                        )
                   "}")]
