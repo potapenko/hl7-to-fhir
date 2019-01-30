@@ -1,7 +1,8 @@
-(ns hl7-to-fhir-translation.test-messages
+(ns hl7-to-fhir-translation.test-01-hl7-parsing
   (:use midje.sweet)
   (:require [aidbox.messages :as messages]
-            [com.nervestaple.hl7-parser.parser :as hl7])
+            [com.nervestaple.hl7-parser.parser :as hl7]
+            [clojure.pprint :refer [pprint]])
   (:import[java.util Date]))
 
 (defn test-message []
@@ -27,3 +28,17 @@
                                               (hl7/create-field ["MYAPP"])
                                               (hl7/create-field ["TEST LAB"])
                                               (hl7/create-field ["19202830920"]))) => map?)
+
+
+;; adt 4-7
+
+(fact "Structure"
+
+
+      (-> (messages/get-stored-message 5)
+          hl7/parse
+          pprint
+          )
+
+
+      )

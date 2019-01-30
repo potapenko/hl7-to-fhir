@@ -6,9 +6,11 @@
   (:import [java.util Date]))
 
 (defn fix-message-text [s]
-  (-> s
-   string/trim
-   (string/replace #"(\n|\r)+" (str (char hl7/ASCII_CR)))))
+  (->> s
+   string/split-lines
+   (map string/trim)
+   (remove string/blank?)
+   (string/join (str (char hl7/ASCII_CR)))))
 
 (defn get-stored-message [index]
   (some->> (io/file "./resources/")
@@ -17,6 +19,14 @@
            first
            slurp
            fix-message-text))
+
+(defn parse [s]
+  (-> s
+      fix-message-text
+      hl7/parse))
+
+(defn message->orm [message]
+  )
 
 (comment
 

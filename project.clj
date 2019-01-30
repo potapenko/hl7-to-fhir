@@ -9,7 +9,7 @@
 
 
                  ]
-
+  :resource-paths ["resources"]
   :profiles {:dev {:dependencies [[midje "1.9.6"]]}}
 
   )
