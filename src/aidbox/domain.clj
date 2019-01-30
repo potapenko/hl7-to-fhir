@@ -1,6 +1,12 @@
 (ns aidbox.domain
   (:require [aidbox.messages :as messages]
+            [clojure.pprint :refer [pprint]]
+            [clj-time.core :as t]
+            [clj-time.format :as f]
+            [clj-time.coerce :as c]
             [com.nervestaple.hl7-parser.parser :as hl7]))
+
+(def hl7-time-format (f/formatter "yyyyMMddHHmmSS"))
 
 (comment "
 
@@ -24,9 +30,9 @@ Since an image is worth a thousand words, I’ll try and illustrate the process 
          _ _] (->> segment :fields (map :content))]
     {:from       {:app sending-app :facility sending-facility}
      :to         {:app receiving-app :facility receiving-facility}
-     :when       when
-     :msg-type   msg-type
-     :envet-type event-type
+     :date       (f/parse hl7-time-format when)
+     :msg-type   (keyword msg-type)
+     :envet-type (keyword event-type)
      :msg-id     msg-id}))
 
 (defmethod parse-segment "EVN" [segment]
@@ -37,7 +43,6 @@ Since an image is worth a thousand words, I’ll try and illustrate the process 
 
 (defmethod parse-segment "PID" [segment]
   "not implemented")
-
 
 (defmethod parse-segment "NK1" [segment]
   "not implemented")
@@ -51,7 +56,6 @@ Since an image is worth a thousand words, I’ll try and illustrate the process 
 (defmethod parse-segment :default [segment]
   "can't parse")
 
-
 (defn parse-message [message]
   (->> message
        :segments
@@ -60,6 +64,12 @@ Since an image is worth a thousand words, I’ll try and illustrate the process 
 
 (comment
 
+  (pprint (hl7/parse (messages/get-stored-message 4)))
+
   (first (parse-message (hl7/parse (messages/get-stored-message 4))))
+
+  (first (parse-message (hl7/parse (messages/get-stored-message 6))))
+
+
 
   )

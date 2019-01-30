@@ -5,6 +5,7 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [clojure-hl7-parser "3.4.1"]
+                 [clj-time "0.15.0"]
 
 
 
