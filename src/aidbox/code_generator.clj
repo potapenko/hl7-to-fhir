@@ -38,15 +38,28 @@
                              :repetition (string->keyword repetition)
                              :info       name}))))})))
 
+
 (defn- wrap-vector [s]
   (str "[" s "]"))
 
+(defn- destruct-field-data [{:keys [id sequence	length data-type required repetition name]}]
+  (-> id clojure.core/name wrap-vector))
+
+(defn prepare-field-data [{:keys [id sequence	length data-type required repetition name]}]
+  (-> id clojure.core/name))
+
 (defn create-method [{:keys [info id fields]}]
   (let [vars-str (->> fields
-                      (map (fn [x]
-                             (-> x :id name wrap-vector)))
+                      (map destruct-field-data)
                       (string/join "\n         "))
-        map-str  ""]
+        map-str  (str
+                  "{"
+                  (->> fields
+                       (map (fn [{:keys [id] :as field}]
+                              (str id " " (prepare-field-data field))))
+                       (string/join "\n      ")
+                       )
+                  "}")]
     (format
      (slurp (io/resource "templates/segment-method.txt"))
       info id vars-str id map-str)))
@@ -55,14 +68,14 @@
   (->> (io/resource "tables/segments")
        io/as-file
        file-seq
-       (sort-by #(-> % .lastModified))
+       (sort-by #(or (-> % .lastModified)))
        (remove #(-> % .isDirectory))
-       ;; (take 1)
+       (sort-by #(if (-> % .getName (= "msh.txt")) -1 1))
        (map slurp)
        (map parse-one-segment)
        (remove nil?)
        (map create-method)
-       (string/join "\n\n")
+       (string/join "\n")
        (format (slurp (io/resource "templates/orm.txt")))
        (spit (io/file "./src/aidbox/orm.clj"))))
 
