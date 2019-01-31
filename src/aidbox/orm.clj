@@ -980,6 +980,22 @@
     [:ERR
      {:error-code-and-location error-code-and-location}]))
 
+;; No info
+(defmethod parse-segment "ZIL" [segment]
+  (let [[[dicom-study-ins-uid] ;; Dicom Study Ins UID (:ID)
+           ](->> segment :fields (map :content))]
+    [:ZIL
+     {:dicom-study-ins-uid dicom-study-ins-uid}]))
+
+;; No info
+(defmethod parse-segment "ZDG" [segment]
+  (let [[[debug-message-type] ;; Debug Message Type (:ST)
+         [debug-message] ;; Debug Message (:ST)
+           ](->> segment :fields (map :content))]
+    [:ZDG
+     {:debug-message-type debug-message-type
+      :debug-message debug-message}]))
+
 ;; Notes and Comments
 (defmethod parse-segment "NTE" [segment]
   (let [[[set-id] ;; Set ID (:SI)
@@ -1335,6 +1351,49 @@
       :race race
       :handicap handicap
       :contact-person-social-security-number contact-person-social-security-number}]))
+
+;; No info
+(defmethod parse-segment "ZMF" [segment]
+  (let [[[account-balance] ;; Account Balance (:ST)
+         [account-balance-forward] ;; Account Balance Forward (:ST)
+         [account-unapplied-credit] ;; Account Unapplied Credit (:ST)
+         [account-creation-date] ;; Account Creation Date (:ST)
+         [account-bill-type] ;; Account Bill Type (:ST)
+         [account-monthly-payment-amount] ;; Account Monthly Payment Amount (:ST)
+         [account-date-last-payment] ;; Account Date Last Payment (:ST)
+         [account-amount-last-payment] ;; Account Amount Last Payment (:ST)
+         [account-date-last-bill] ;; Account Date Last Bill (:ST)
+         [account-amount-last-statement] ;; Account Amount Last Statement (:ST)
+         [account-ytd-charges] ;; Account YTD Charges (:ST)
+         [account-patient-due-ar] ;; Account Patient Due AR (:ST)
+         [account-account-status] ;; Account Account Status (:ST)
+         [account-discount-percent] ;; Account Discount Percent (:ST)
+         [account-date-last-procedure-posting] ;; Account Date Last Procedure Posting (:ST)
+         [account-patient-class] ;; Account Patient Class (:ST)
+         [account-patient-hist-balance] ;; Account Patient Hist Balance (:ST)
+         [account-days-before-enter-call] ;; Account Days before Enter Call (:ST)
+         [account-collection-priority] ;; Account Collection Priority (:ST)
+           ](->> segment :fields (map :content))]
+    [:ZMF
+     {:account-balance account-balance
+      :account-balance-forward account-balance-forward
+      :account-unapplied-credit account-unapplied-credit
+      :account-creation-date account-creation-date
+      :account-bill-type account-bill-type
+      :account-monthly-payment-amount account-monthly-payment-amount
+      :account-date-last-payment account-date-last-payment
+      :account-amount-last-payment account-amount-last-payment
+      :account-date-last-bill account-date-last-bill
+      :account-amount-last-statement account-amount-last-statement
+      :account-ytd-charges account-ytd-charges
+      :account-patient-due-ar account-patient-due-ar
+      :account-account-status account-account-status
+      :account-discount-percent account-discount-percent
+      :account-date-last-procedure-posting account-date-last-procedure-posting
+      :account-patient-class account-patient-class
+      :account-patient-hist-balance account-patient-hist-balance
+      :account-days-before-enter-call account-days-before-enter-call
+      :account-collection-priority account-collection-priority}]))
 
 ;; Common Order
 (defmethod parse-segment "ORC" [segment]
@@ -1700,6 +1759,261 @@
       :which-date-time-status-qualifier which-date-time-status-qualifier
       :date-time-selection-qualifier date-time-selection-qualifier
       :when-quantity-timing-qualifier when-quantity-timing-qualifier}]))
+
+;; No info
+(defmethod parse-segment "ZCL" [segment]
+  (let [[[height] ;; Height (:ST)
+         [weight] ;; Weight (:ST)
+         [urine-collection] ;; Urine Collection (:ST)
+         [fasting] ;; Fasting (:ST)
+           ](->> segment :fields (map :content))]
+    [:ZCL
+     {:height height
+      :weight weight
+      :urine-collection urine-collection
+      :fasting fasting}]))
+
+;; No info
+(defmethod parse-segment "ZBL" [segment]
+  (let [[[patient-race] ;; Patient Race (:ST)
+         [hispanic] ;; Hispanic (:ST)
+         [blood-lead-type] ;; Blood Lead Type (:ST)
+         [blood-lead-purpose] ;; Blood Lead Purpose (:ST)
+         [blood-lead-county] ;; Blood Lead County (:ST)
+           ](->> segment :fields (map :content))]
+    [:ZBL
+     {:patient-race patient-race
+      :hispanic hispanic
+      :blood-lead-type blood-lead-type
+      :blood-lead-purpose blood-lead-purpose
+      :blood-lead-county blood-lead-county}]))
+
+;; No info
+(defmethod parse-segment "ZCY" [segment]
+  (let [[[cervical] ;; Cervical (:ST)
+         [endocervical] ;; Endocervical (:ST)
+         [labia] ;; Labia-Vulva (:ST)
+         [vaginal] ;; Vaginal (:ST)
+         [endometrial] ;; Endometrial (:ST)
+         [swab] ;; Swab-Spatula (:ST)
+         [brush] ;; Brush-Spatula (:ST)
+         [spatula] ;; Spatula-Alone (:ST)
+         [brush-2] ;; Brush-Alone (:ST)
+         [broom] ;; Broom-Alone (:ST)
+         [other-collection-technique] ;; Other Collection Technique (:ST)
+         [lmp] ;; LMP-Meno Date (:ST)
+         [prev-treatment] ;; Prev Treatment (:ST)
+         [hyst] ;; Hyst-Prev Treatment (:ST)
+         [coniza] ;; Coniza-Prev Treatment (:ST)
+         [colp] ;; Colp-BX-Prev Treatment (:ST)
+         [laser-vap] ;; Laser Vap-Prev Treatment (:ST)
+         [cyro] ;; Cyro-Prev Treatment (:ST)
+         [radiation] ;; Radiation-Prev Treatment (:ST)
+         [dates-results] ;; Dates Results-prev cyto inf (:ST)
+         [pregnant] ;; Pregnant (:ST)
+         [lactating] ;; Lactating (:ST)
+         [oral-contraceptive] ;; Oral Contraceptive (:ST)
+         [menopausal] ;; Menopausal (:ST)
+         [estro] ;; Estro-RX (:ST)
+         [pmp] ;; PMP-Bleeding (:ST)
+         [post] ;; Post-Part (:ST)
+         [iud] ;; IUD (:ST)
+         [all-other-pat-info] ;; All Other Pat Info (:ST)
+         [negative-prev-cyto-info] ;; Negative prev cyto info (:ST)
+         [atypical-prev-cyto-info] ;; Atypical prev cyto info (:ST)
+         [dysplasia-prev-cyto-info] ;; Dysplasia prev cyto info (:ST)
+         [ca] ;; Ca-In-Situ prev cyto info (:ST)
+         [invasive-prev-cyto-info] ;; Invasive prev cyto info (:ST)
+         [other-prev-cyto-info] ;; Other prev cyto info (:ST)
+           ](->> segment :fields (map :content))]
+    [:ZCY
+     {:cervical cervical
+      :endocervical endocervical
+      :labia labia
+      :vaginal vaginal
+      :endometrial endometrial
+      :swab swab
+      :brush brush
+      :spatula spatula
+      :brush-2 brush-2
+      :broom broom
+      :other-collection-technique other-collection-technique
+      :lmp lmp
+      :prev-treatment prev-treatment
+      :hyst hyst
+      :coniza coniza
+      :colp colp
+      :laser-vap laser-vap
+      :cyro cyro
+      :radiation radiation
+      :dates-results dates-results
+      :pregnant pregnant
+      :lactating lactating
+      :oral-contraceptive oral-contraceptive
+      :menopausal menopausal
+      :estro estro
+      :pmp pmp
+      :post post
+      :iud iud
+      :all-other-pat-info all-other-pat-info
+      :negative-prev-cyto-info negative-prev-cyto-info
+      :atypical-prev-cyto-info atypical-prev-cyto-info
+      :dysplasia-prev-cyto-info dysplasia-prev-cyto-info
+      :ca ca
+      :invasive-prev-cyto-info invasive-prev-cyto-info
+      :other-prev-cyto-info other-prev-cyto-info}]))
+
+;; No info
+(defmethod parse-segment "ZSA" [segment]
+  (let [[[insulin-dependent] ;; Insulin Dependent (:ST)
+         [gestational-age] ;; Gestational Age (:ST)
+         [gest-age-by-lmp] ;; Gest Age by LMP (:ST)
+         [gest-age-by-ultrasound] ;; Gest Age by Ultrasound (:ST)
+         [gest-age-by-est-date-of-delivery] ;; Gest Age by Est Date of Delivery (:ST)
+         [type-of-pregnancy] ;; Type of Pregnancy (:ST)
+         [routine-screening] ;; Routine Screening (:ST)
+         [prev-neural-tube-defects] ;; Prev Neural Tube Defects (:ST)
+         [advanced-maternal-age] ;; Advanced Maternal Age (:ST)
+         [history-of-down-syndrome] ;; History of Down Syndrome (:ST)
+         [hist-of-cystic-fibrosis] ;; Hist of Cystic Fibrosis (:ST)
+         [other-indications] ;; Other Indications (:ST)
+         [hand-written-afp-info] ;; Hand Written AFP Info (:ST)
+         [reason-for-repeat:-elevated] ;; Reason for Repeat: Elevated (:ST)
+         [early-ga] ;; Early GA (:ST)
+         [hemolyzed] ;; Hemolyzed (:ST)
+           ](->> segment :fields (map :content))]
+    [:ZSA
+     {:insulin-dependent insulin-dependent
+      :gestational-age gestational-age
+      :gest-age-by-lmp gest-age-by-lmp
+      :gest-age-by-ultrasound gest-age-by-ultrasound
+      :gest-age-by-est-date-of-delivery gest-age-by-est-date-of-delivery
+      :type-of-pregnancy type-of-pregnancy
+      :routine-screening routine-screening
+      :prev-neural-tube-defects prev-neural-tube-defects
+      :advanced-maternal-age advanced-maternal-age
+      :history-of-down-syndrome history-of-down-syndrome
+      :hist-of-cystic-fibrosis hist-of-cystic-fibrosis
+      :other-indications other-indications
+      :hand-written-afp-info hand-written-afp-info
+      :reason-for-repeat:-elevated reason-for-repeat:-elevated
+      :early-ga early-ga
+      :hemolyzed hemolyzed}]))
+
+;; No info
+(defmethod parse-segment "ZPS" [segment]
+  (let [[[sequence-number] ;; Sequence Number (:ST)
+         [facility-mnemonic] ;; Facility Mnemonic (:ST)
+         [facility-name] ;; Facility Name (:ST)
+         [facility-address-info] ;; Facility Address Info (:ST)
+         [facility-phone-num] ;; Facility Phone num (:ST)
+         [facility-contact] ;; Facility Contact (:ST)
+         [facility-director] ;; Facility Director (:ST)
+           ](->> segment :fields (map :content))]
+    [:ZPS
+     {:sequence-number sequence-number
+      :facility-mnemonic facility-mnemonic
+      :facility-name facility-name
+      :facility-address-info facility-address-info
+      :facility-phone-num facility-phone-num
+      :facility-contact facility-contact
+      :facility-director facility-director}]))
+
+;; No info
+(defmethod parse-segment "ZSV" [segment]
+  (let [[[unused] ;; Unused (:CE)
+         [unused-2] ;; Unused (:CE)
+         [unused-3] ;; Unused (:CE)
+         [unused-4] ;; Unused (:CE)
+         [unused-5] ;; Unused (:CE)
+         [unused-6] ;; Unused (:CE)
+         [vfc-code] ;; VFC Code (:CE)
+           ](->> segment :fields (map :content))]
+    [:ZSV
+     {:unused unused
+      :unused-2 unused-2
+      :unused-3 unused-3
+      :unused-4 unused-4
+      :unused-5 unused-5
+      :unused-6 unused-6
+      :vfc-code vfc-code}]))
+
+;; No info
+(defmethod parse-segment "ZPA" [segment]
+  (let [[[employee-group] ;; employee_group (:CE)
+         [employee-class] ;; employee_class (:CE)
+         [job-code] ;; job_code (:CE)
+         [company-code] ;; company_code (:CE)
+         [cost-center-code] ;; cost_center_code (:CE)
+         [facility-code] ;; facility_code (:CE)
+         [building-code] ;; building_code (:CE)
+         [floor-code] ;; floor_code (:CE)
+         [hire-datetime] ;; hire_datetime (:TS)
+         [rehire-datetime] ;; rehire_datetime (:TS)
+         [retirement-datetime] ;; retirement_datetime (:TS)
+         [termination-datetime] ;; termination_datetime (:TS)
+         [work-schedule-code] ;; work_schedule_code (:CE)
+         [onboard-datetime] ;; onboard_datetime (:TS)
+         [supervisor-mrn] ;; supervisor_mrn (:ST)
+         [supervisor-id] ;; supervisor_id (:ST)
+         [admin-assist-mrn] ;; admin_assist_mrn (:ST)
+         [admin-assist-id] ;; admin_assist_id (:ST)
+         [hr-rsn-typ-nm] ;; hr_rsn_typ_nm (:ST)
+         [hr-actn-typ-cd] ;; hr_actn_typ_cd (:ST)
+         [hr-actn-typ-nm] ;; hr_actn_typ_nm (:ST)
+         [actn-begin-dt] ;; actn_begin_dt (:TS)
+         [actn-end-dt] ;; actn_end_dt (:TS)
+         [clinic-location] ;; clinic_location (:ST)
+         [capacity-utilization-level] ;; capacity_utilization_level (:CE)
+         [hours-worked-per-day] ;; hours_worked_per_day (:ST)
+         [days-worked-per-week] ;; days_worked_per_week (:ST)
+         [status-code] ;; status_code (:CE)
+         [edl-start-datetime] ;; edl_start_datetime (:TS)
+         [edl-end-datetime] ;; edl_end_datetime (:TS)
+         [personnel-area-code] ;; personnel_area_code (:ST)
+         [personnel-area-text] ;; personnel_area_text (:ST)
+         [location] ;; location (:ST)
+         [employee-union] ;; employee_union (:CE)
+         [hourlyrate] ;; hourlyrate (:ST)
+         [seniority-date] ;; seniority_date (:TS)
+           ](->> segment :fields (map :content))]
+    [:ZPA
+     {:employee-group employee-group
+      :employee-class employee-class
+      :job-code job-code
+      :company-code company-code
+      :cost-center-code cost-center-code
+      :facility-code facility-code
+      :building-code building-code
+      :floor-code floor-code
+      :hire-datetime hire-datetime
+      :rehire-datetime rehire-datetime
+      :retirement-datetime retirement-datetime
+      :termination-datetime termination-datetime
+      :work-schedule-code work-schedule-code
+      :onboard-datetime onboard-datetime
+      :supervisor-mrn supervisor-mrn
+      :supervisor-id supervisor-id
+      :admin-assist-mrn admin-assist-mrn
+      :admin-assist-id admin-assist-id
+      :hr-rsn-typ-nm hr-rsn-typ-nm
+      :hr-actn-typ-cd hr-actn-typ-cd
+      :hr-actn-typ-nm hr-actn-typ-nm
+      :actn-begin-dt actn-begin-dt
+      :actn-end-dt actn-end-dt
+      :clinic-location clinic-location
+      :capacity-utilization-level capacity-utilization-level
+      :hours-worked-per-day hours-worked-per-day
+      :days-worked-per-week days-worked-per-week
+      :status-code status-code
+      :edl-start-datetime edl-start-datetime
+      :edl-end-datetime edl-end-datetime
+      :personnel-area-code personnel-area-code
+      :personnel-area-text personnel-area-text
+      :location location
+      :employee-union employee-union
+      :hourlyrate hourlyrate
+      :seniority-date seniority-date}]))
 
 
 (defn parse-message [message]

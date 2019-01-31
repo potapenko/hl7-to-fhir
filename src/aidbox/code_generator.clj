@@ -22,7 +22,9 @@
                                  string/split-lines
                                  (map string/trim)
                                  (remove string/blank?))
-        [_ info id]         (re-find #"^(.+?)?\s*\((.+)\).*$" header)]
+        [_ info id]         (or
+                             (re-find #"^(.+?)?\s*\((.+)\).*$" header)
+                             [nil "No info" (string/trim header)])]
     (if-not id
      (println "Parse error:" header)
      (do
