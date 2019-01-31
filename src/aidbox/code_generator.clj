@@ -23,31 +23,33 @@
                                  (map string/trim)
                                  (remove string/blank?))
         [_ info id]         (re-find #"^(.+?)?\s*\((.+)\).*$" header)]
-    (when id
-     (println ">>" info id)
-     {:info   info
-      :id     id
-      :fields (->> fields
-                   (map #(string/split % #"\t+"))
-                   (map (fn [[sequence	length data-type required repetition name]]
-                          (let [id (string->keyword name)]
-                            {:id         id
-                             :sequence   (read-string sequence)
-                             :length     (read-string  length)
-                             :data-type  (-> data-type string->keyword clojure.core/name string/upper-case keyword)
-                             :required   (= required "REQ")
-                             :repetition (string->keyword repetition)
-                             :info       name})))
-                   (reduce (fn [res {:keys [id] :as field}]
-                             (let [use-before (-> res :ids (get id 0))
-                                   unique-id  (if (pos? use-before)
-                                                (keyword (format "%s-%s" (name id) (inc use-before)))
-                                                id)]
-                               (-> res
-                                   (update :fields conj (assoc field :id unique-id))
-                                   (update :ids assoc id (inc use-before)))))
-                           {:ids {} :fields []})
-                   :fields)})))
+    (if-not id
+     (println "Parse error:" header)
+     (do
+       (println "Parse success:" header "->" id)
+       {:info   info
+        :id     id
+        :fields (->> fields
+                     (map #(string/split % #"\t+"))
+                     (map (fn [[sequence	length data-type required repetition name]]
+                            (let [id (string->keyword name)]
+                              {:id         id
+                               :sequence   (read-string sequence)
+                               :length     (read-string  length)
+                               :data-type  (-> data-type string->keyword clojure.core/name string/upper-case keyword)
+                               :required   (= required "REQ")
+                               :repetition (string->keyword repetition)
+                               :info       name})))
+                     (reduce (fn [res {:keys [id] :as field}]
+                               (let [use-before (-> res :ids (get id 0))
+                                     unique-id  (if (pos? use-before)
+                                                  (keyword (format "%s-%s" (name id) (inc use-before)))
+                                                  id)]
+                                 (-> res
+                                     (update :fields conj (assoc field :id unique-id))
+                                     (update :ids assoc id (inc use-before)))))
+                             {:ids {} :fields []})
+                     :fields)}))))
 
 (defn- wrap-vector [s]
   (str "[" s "]"))

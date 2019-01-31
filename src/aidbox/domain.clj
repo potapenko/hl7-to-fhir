@@ -2,6 +2,7 @@
   (:require [aidbox.messages :as messages]
             [clj-time.format :as f]
             [clojure.pprint :refer [pprint]]
+            [aidbox.util :as util]
             [com.nervestaple.hl7-parser.parser :as hl7]))
 
 (def hl7-time-format (f/formatter "yyyyMMddHHmmSS"))
