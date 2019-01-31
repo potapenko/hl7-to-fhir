@@ -1,4 +1,4 @@
-(ns aidbox.adt
+(ns aidbox.hl7.adt
   (:require [clojure.java.io :as io]
             [clojure.string :as string]))
 

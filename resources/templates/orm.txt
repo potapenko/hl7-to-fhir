@@ -1,10 +1,6 @@
-(ns aidbox.orm
-  (:require [aidbox.messages :as messages]
-            [clj-time.format :as f]
-            [clojure.pprint :refer [pprint]]
-            [com.nervestaple.hl7-parser.parser :as hl7]))
-
-(def hl7-time-format (f/formatter "yyyyMMddHHmmSS"))
+(ns aidbox.hl7.orm
+  (:require [aidbox.hl7.messages :as messages]
+            [aidbox.hl7.util :as util]))
 
 (defmulti parse-segment :id)
 

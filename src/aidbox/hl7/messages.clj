@@ -1,5 +1,5 @@
-(ns aidbox.messages
-  (:require [aidbox.parser :as parser]
+(ns aidbox.hl7.messages
+  (:require [aidbox.hl7.parser :as parser]
             [clojure.string :as string]
             [clojure.java.io :as io]))
 

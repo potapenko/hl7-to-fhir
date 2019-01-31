@@ -1,7 +1,4 @@
-(ns aidbox.core
-  )
+(ns aidbox.core)
 
-(defn- main [& args]
-
-  )
+(defn- main [& args])
 

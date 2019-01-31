@@ -1,7 +1,7 @@
 (ns hl7-to-fhir-translation.test-02-mapping
   (:use midje.sweet)
-  (:require [aidbox.messages :as messages]
-            [com.nervestaple.hl7-parser.parser :as hl7]
+  (:require [aidbox.hl7.messages :as messages]
+            [aidbox.hl7.parser :as hl7]
             [clojure.pprint :refer [pprint]]))
 
 (def step-1

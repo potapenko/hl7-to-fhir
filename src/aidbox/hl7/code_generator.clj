@@ -1,4 +1,4 @@
-(ns aidbox.code-generator
+(ns aidbox.hl7.code-generator
   (:require [clojure.java.io :as io]
             [clojure.pprint :refer [pprint]]
             [clojure.string :as string]))
@@ -53,11 +53,8 @@
                              {:ids {} :fields []})
                      :fields)}))))
 
-(defn- wrap-vector [s]
-  (str "[" s "]"))
-
 (defn- destruct-field-data [{:keys [id sequence	length data-type required repetition name info]}]
-  (str (-> id clojure.core/name wrap-vector)  " ;; " info " (" data-type ")"))
+  (str (-> id clojure.core/name)  " ;; " info " (" data-type ")"))
 
 (defn prepare-field-data [{:keys [id sequence	length data-type required repetition name]}]
   (-> id clojure.core/name))
@@ -92,7 +89,7 @@
        (map create-method)
        (string/join "\n")
        (format (slurp (io/resource "templates/orm.txt")))
-       (spit (io/file "./src/aidbox/orm.clj"))))
+       (spit (io/file "./src/aidbox/hl7/orm.clj"))))
 
 (comment
 

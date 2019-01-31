@@ -1,6 +1,6 @@
 ;; %s
 (defmethod parse-segment "%s" [segment]
   (let [[%s
-           ](->> segment :fields (map :content))]
+           ](->> segment :fields)]
     [:%s
      %s]))

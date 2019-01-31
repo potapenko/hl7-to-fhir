@@ -1,4 +1,4 @@
-(ns aidbox.parser
+(ns aidbox.hl7.parser
   (:require [clojure.string :as string]))
 
 (defn- parse-segment [s]
@@ -6,8 +6,8 @@
                              (map string/trim)
                              (map (fn [x]
                                     (if (re-find #"\^" x)
-                                      (string/split #"\^"))
-                                    x)))]
+                                      (string/split x #"\^")
+                                      x))))]
    {:id id :fields fields}))
 
 (defn parse [s]
