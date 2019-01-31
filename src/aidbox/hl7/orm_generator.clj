@@ -1,3 +1,5 @@
+(ns aidbox.hl7.orm-generator)
+
 (ns aidbox.hl7.code-generator
   (:require [clojure.java.io :as io]
             [clojure.pprint :refer [pprint]]
@@ -59,22 +61,13 @@
 (defn prepare-field-data [{:keys [id sequence	length data-type required repetition name]}]
   (-> id clojure.core/name))
 
-(defn create-method [{:keys [info id fields]}]
-  (let [vars-str (->> fields
-                      (map destruct-field-data)
-                      (string/join "\n         "))
-        map-str  (str
-                  "{"
-                  (->> fields
-                       (map (fn [{:keys [id info] :as field}]
-                              (str id " " (prepare-field-data field))))
-                       distinct
-                       (string/join "\n      ")
-                       )
-                  "}")]
-    (format
-     (slurp (io/resource "templates/segment-method.txt"))
-      info id vars-str id map-str)))
+(defn create-segment [{:keys [id] :as segment}]
+  [(keyword id) segment])
+
+(defn map->str [map]
+  #_(prn-str map)
+  (with-out-str
+    (pprint map)))
 
 (defn generate-orm []
   (->> (io/resource "tables/segments")
@@ -86,10 +79,10 @@
        (map slurp)
        (map parse-one-segment)
        (remove nil?)
-       (map create-method)
-       (string/join "\n")
-       (format (slurp (io/resource "templates/orm.txt")))
-       (spit (io/file "./src/aidbox/hl7/orm.clj"))))
+       (map create-segment)
+       (into {})
+       (map->str)
+       (spit (io/file "./resources/orm.edn"))))
 
 (comment
 
