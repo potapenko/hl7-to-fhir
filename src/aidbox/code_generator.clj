@@ -11,6 +11,7 @@
            (string/replace #"[(-.^].+" "")
            (string/replace #"&.+" "")
            (string/replace #"^\d+" "")
+           ;; (string/replace #"^when|other|which")
            string/trim
            (string/replace #"[_\s/]+" "-")
            keyword)
@@ -33,17 +34,26 @@
                             {:id         id
                              :sequence   (read-string sequence)
                              :length     (read-string  length)
-                             :data-type  (string->keyword data-type)
+                             :data-type  (-> data-type string->keyword clojure.core/name string/upper-case keyword)
                              :required   (= required "REQ")
                              :repetition (string->keyword repetition)
-                             :info       name}))))})))
-
+                             :info       name})))
+                   (reduce (fn [res {:keys [id] :as field}]
+                             (let [use-before (-> res :ids (get id 0))
+                                   unique-id  (if (pos? use-before)
+                                                (keyword (format "%s-%s" (name id) (inc use-before)))
+                                                id)]
+                               (-> res
+                                   (update :fields conj (assoc field :id unique-id))
+                                   (update :ids assoc id (inc use-before)))))
+                           {:ids {} :fields []})
+                   :fields)})))
 
 (defn- wrap-vector [s]
   (str "[" s "]"))
 
-(defn- destruct-field-data [{:keys [id sequence	length data-type required repetition name]}]
-  (-> id clojure.core/name wrap-vector))
+(defn- destruct-field-data [{:keys [id sequence	length data-type required repetition name info]}]
+  (str (-> id clojure.core/name wrap-vector)  " ;; " info " (" data-type ")"))
 
 (defn prepare-field-data [{:keys [id sequence	length data-type required repetition name]}]
   (-> id clojure.core/name))
@@ -55,7 +65,7 @@
         map-str  (str
                   "{"
                   (->> fields
-                       (map (fn [{:keys [id] :as field}]
+                       (map (fn [{:keys [id info] :as field}]
                               (str id " " (prepare-field-data field))))
                        distinct
                        (string/join "\n      ")

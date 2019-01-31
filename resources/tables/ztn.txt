@@ -1,6 +1,0 @@
-ZTN
-
-Sequence	length	Data Type	Required	Repetition	Name
-1	100	ST	REQ	NO_RPT	System Handle
-2	100	ST	REQ	NO_RPT	System OID
-3	300	TN	OPT	NO_MAX	Translations used
