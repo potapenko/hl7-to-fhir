@@ -1,0 +1,14 @@
+{
+  "resourceType" : "Schedule",
+  // from Resource: id, meta, implicitRules, and language
+  // from DomainResource: text, contained, extension, and modifierExtension
+  "identifier" : [{ Identifier }], // External Ids for this item
+  "active" : <boolean>, // Whether this schedule is in active use
+  "serviceCategory" : [{ CodeableConcept }], // High-level category
+  "serviceType" : [{ CodeableConcept }], // Specific service
+  "specialty" : [{ CodeableConcept }], // Type of specialty needed
+  "actor" : [{ Reference(Patient|Practitioner|PractitionerRole|RelatedPerson|
+   Device|HealthcareService|Location) }], // R!  Resource(s) that availability information is being provided for
+  "planningHorizon" : { Period }, // Period of time covered by schedule
+  "comment" : "<string>" // Comments on availability
+}

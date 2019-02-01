@@ -1,0 +1,13 @@
+{
+  "resourceType" : "BodyStructure",
+  // from Resource: id, meta, implicitRules, and language
+  // from DomainResource: text, contained, extension, and modifierExtension
+  "identifier" : [{ Identifier }], // Bodystructure identifier
+  "active" : <boolean>, // Whether this record is in active use
+  "morphology" : { CodeableConcept }, // Kind of Structure
+  "location" : { CodeableConcept }, // Body site
+  "locationQualifier" : [{ CodeableConcept }], // Body site modifier
+  "description" : "<string>", // Text description
+  "image" : [{ Attachment }], // Attached images
+  "patient" : { Reference(Patient) } // R!  Who this is about
+}

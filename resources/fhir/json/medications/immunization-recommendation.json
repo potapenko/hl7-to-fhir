@@ -1,0 +1,30 @@
+{
+  "resourceType" : "ImmunizationRecommendation",
+  // from Resource: id, meta, implicitRules, and language
+  // from DomainResource: text, contained, extension, and modifierExtension
+  "identifier" : [{ Identifier }], // Business identifier
+  "patient" : { Reference(Patient) }, // R!  Who this profile is for
+  "date" : "<dateTime>", // R!  Date recommendation(s) created
+  "authority" : { Reference(Organization) }, // Who is responsible for protocol
+  "recommendation" : [{ // R!  Vaccine administration recommendations
+    "vaccineCode" : [{ CodeableConcept }], // Vaccine  or vaccine group recommendation applies to
+    "targetDisease" : { CodeableConcept }, // Disease to be immunized against
+    "contraindicatedVaccineCode" : [{ CodeableConcept }], // Vaccine which is contraindicated to fulfill the recommendation
+    "forecastStatus" : { CodeableConcept }, // R!  Vaccine recommendation status
+    "forecastReason" : [{ CodeableConcept }], // Vaccine administration status reason
+    "dateCriterion" : [{ // Dates governing proposed immunization
+      "code" : { CodeableConcept }, // R!  Type of date
+      "value" : "<dateTime>" // R!  Recommended date
+    }],
+    "description" : "<string>", // Protocol details
+    "series" : "<string>", // Name of vaccination series
+    // doseNumber[x]: Recommended dose number within series. One of these 2:
+    "doseNumberPositiveInt" : "<positiveInt>",
+    "doseNumberString" : "<string>",
+    // seriesDoses[x]: Recommended number of doses for immunity. One of these 2:
+    "seriesDosesPositiveInt" : "<positiveInt>",
+    "seriesDosesString" : "<string>",
+    "supportingImmunization" : [{ Reference(Immunization|ImmunizationEvaluation) }], // Past immunizations supporting recommendation
+    "supportingPatientInformation" : [{ Reference(Any) }] // Patient observations supporting recommendation
+  }]
+}

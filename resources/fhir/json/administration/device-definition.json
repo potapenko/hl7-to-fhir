@@ -1,0 +1,50 @@
+{
+  "resourceType" : "DeviceDefinition",
+  // from Resource: id, meta, implicitRules, and language
+  // from DomainResource: text, contained, extension, and modifierExtension
+  "identifier" : [{ Identifier }], // Instance identifier
+  "udiDeviceIdentifier" : [{ // Unique Device Identifier (UDI) Barcode string
+    "deviceIdentifier" : "<string>", // R!  The identifier that is to be associated with every Device that references this DeviceDefintiion for the issuer and jurisdication porvided in the DeviceDefinition.udiDeviceIdentifier
+    "issuer" : "<uri>", // R!  The organization that assigns the identifier algorithm
+    "jurisdiction" : "<uri>" // R!  The jurisdiction to which the deviceIdentifier applies
+  }],
+  // manufacturer[x]: Name of device manufacturer. One of these 2:
+  "manufacturerString" : "<string>",
+  "manufacturerReference" : { Reference(Organization) },
+  "deviceName" : [{ // A name given to the device to identify it
+    "name" : "<string>", // R!  The name of the device
+    "type" : "<code>" // R!  udi-label-name | user-friendly-name | patient-reported-name | manufacturer-name | model-name | other
+  }],
+  "modelNumber" : "<string>", // The model number for the device
+  "type" : { CodeableConcept }, // What kind of device or device system this is
+  "specialization" : [{ // The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication
+    "systemType" : "<string>", // R!  The standard that is used to operate and communicate
+    "version" : "<string>" // The version of the standard that is used to operate and communicate
+  }],
+  "version" : ["<string>"], // Available versions
+  "safety" : [{ CodeableConcept }], // Safety characteristics of the device
+  "shelfLifeStorage" : [{ ProductShelfLife }], // Shelf Life and storage information
+  "physicalCharacteristics" : { ProdCharacteristic }, // Dimensions, color etc.
+  "languageCode" : [{ CodeableConcept }], // Language code for the human-readable text strings produced by the device (all supported)
+  "capability" : [{ // Device capabilities
+    "type" : { CodeableConcept }, // R!  Type of capability
+    "description" : [{ CodeableConcept }] // Description of capability
+  }],
+  "property" : [{ // The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties
+    "type" : { CodeableConcept }, // R!  Code that specifies the property DeviceDefinitionPropetyCode (Extensible)
+    "valueQuantity" : [{ Quantity }], // Property value as a quantity
+    "valueCode" : [{ CodeableConcept }] // Property value as a code, e.g., NTP4 (synced to NTP)
+  }],
+  "owner" : { Reference(Organization) }, // Organization responsible for device
+  "contact" : [{ ContactPoint }], // Details for human/organization for support
+  "url" : "<uri>", // Network address to contact device
+  "onlineInformation" : "<uri>", // Access to on-line information
+  "note" : [{ Annotation }], // Device notes and comments
+  "quantity" : { Quantity }, // The quantity of the device present in the packaging (e.g. the number of devices present in a pack, or the number of devices in the same package of the medicinal product)
+  "parentDevice" : { Reference(DeviceDefinition) }, // The parent device it can be part of
+  "material" : [{ // A substance used to create the material(s) of which the device is made
+    "substance" : { CodeableConcept }, // R!  The substance
+    "alternate" : <boolean>, // Indicates an alternative material of the device
+    "allergenicIndicator" : <boolean> // Whether the substance is a known or suspected allergen
+  }]
+}

@@ -1,0 +1,90 @@
+{
+  "resourceType" : "MedicationKnowledge",
+  // from Resource: id, meta, implicitRules, and language
+  // from DomainResource: text, contained, extension, and modifierExtension
+  "code" : { CodeableConcept }, // Code that identifies this medication
+  "status" : "<code>", // active | inactive | entered-in-error
+  "manufacturer" : { Reference(Organization) }, // Manufacturer of the item
+  "doseForm" : { CodeableConcept }, // powder | tablets | capsule +
+  "amount" : { Quantity(SimpleQuantity) }, // Amount of drug in package
+  "synonym" : ["<string>"], // Additional names for a medication
+  "relatedMedicationKnowledge" : [{ // Associated or related medication information
+    "type" : { CodeableConcept }, // R!  Category of medicationKnowledge
+    "reference" : [{ Reference(MedicationKnowledge) }] // R!  Associated documentation about the associated medication knowledge
+  }],
+  "associatedMedication" : [{ Reference(Medication) }], // A medication resource that is associated with this medication
+  "productType" : [{ CodeableConcept }], // Category of the medication or product
+  "monograph" : [{ // Associated documentation about the medication
+    "type" : { CodeableConcept }, // The category of medication document
+    "source" : { Reference(DocumentReference|Media) } // Associated documentation about the medication
+  }],
+  "ingredient" : [{ // Active or inactive ingredient
+    // item[x]: Medication(s) or substance(s) contained in the medication. One of these 2:
+    "itemCodeableConcept" : { CodeableConcept },
+    "itemReference" : { Reference(Substance) },
+    "isActive" : <boolean>, // Active ingredient indicator
+    "strength" : { Ratio } // Quantity of ingredient present
+  }],
+  "preparationInstruction" : "<markdown>", // The instructions for preparing the medication
+  "intendedRoute" : [{ CodeableConcept }], // The intended or approved route of administration
+  "cost" : [{ // The pricing of the medication
+    "type" : { CodeableConcept }, // R!  The category of the cost information
+    "source" : "<string>", // The source or owner for the price information
+    "cost" : { Money } // R!  The price of the medication
+  }],
+  "monitoringProgram" : [{ // Program under which a medication is reviewed
+    "type" : { CodeableConcept }, // Type of program under which the medication is monitored
+    "name" : "<string>" // Name of the reviewing program
+  }],
+  "administrationGuidelines" : [{ // Guidelines for administration of the medication
+    "dosage" : [{ // Dosage for the medication for the specific guidelines
+      "type" : { CodeableConcept }, // R!  Type of dosage
+      "dosage" : [{ Dosage }] // R!  Dosage for the medication for the specific guidelines
+    }],
+    // indication[x]: Indication for use that apply to the specific administration guidelines. One of these 2:
+    "indicationCodeableConcept" : { CodeableConcept },
+    "indicationReference" : { Reference(ObservationDefinition) },
+    "patientCharacteristics" : [{ // Characteristics of the patient that are relevant to the administration guidelines
+      // characteristic[x]: Specific characteristic that is relevant to the administration guideline. One of these 2:
+      "characteristicCodeableConcept" : { CodeableConcept },
+      "characteristicQuantity" : { Quantity(SimpleQuantity) },
+      "value" : ["<string>"] // The specific characteristic
+    }]
+  }],
+  "medicineClassification" : [{ // Categorization of the medication within a formulary or classification system
+    "type" : { CodeableConcept }, // R!  The type of category for the medication (for example, therapeutic classification, therapeutic sub-classification)
+    "classification" : [{ CodeableConcept }] // Specific category assigned to the medication
+  }],
+  "packaging" : { // Details about packaged medications
+    "type" : { CodeableConcept }, // A code that defines the specific type of packaging that the medication can be found in
+    "quantity" : { Quantity(SimpleQuantity) } // The number of product units the package would contain if fully loaded
+  },
+  "drugCharacteristic" : [{ // Specifies descriptive properties of the medicine
+    "type" : { CodeableConcept }, // Code specifying the type of characteristic of medication
+    // value[x]: Description of the characteristic. One of these 4:
+    "valueCodeableConcept" : { CodeableConcept }
+    "valueString" : "<string>"
+    "valueQuantity" : { Quantity(SimpleQuantity) }
+    "valueBase64Binary" : "<base64Binary>"
+  }],
+  "contraindication" : [{ Reference(DetectedIssue) }], // Potential clinical issue with or between medication(s)
+  "regulatory" : [{ // Regulatory information about a medication
+    "regulatoryAuthority" : { Reference(Organization) }, // R!  Specifies the authority of the regulation
+    "substitution" : [{ // Specifies if changes are allowed when dispensing a medication from a regulatory perspective
+      "type" : { CodeableConcept }, // R!  Specifies the type of substitution allowed
+      "allowed" : <boolean> // R!  Specifies if regulation allows for changes in the medication when dispensing
+    }],
+    "schedule" : [{ // Specifies the schedule of a medication in jurisdiction
+      "schedule" : { CodeableConcept } // R!  Specifies the specific drug schedule
+    }],
+    "maxDispense" : { // The maximum number of units of the medication that can be dispensed in a period
+      "quantity" : { Quantity(SimpleQuantity) }, // R!  The maximum number of units of the medication that can be dispensed
+      "period" : { Duration } // The period that applies to the maximum number of units
+    }
+  }],
+  "kinetics" : [{ // The time course of drug absorption, distribution, metabolism and excretion of a medication from the body
+    "areaUnderCurve" : [{ Quantity(SimpleQuantity) }], // The drug concentration measured at certain discrete points in time
+    "lethalDose50" : [{ Quantity(SimpleQuantity) }], // The median lethal dose of a drug
+    "halfLifePeriod" : { Duration } // Time required for concentration in the body to decrease by half
+  }]
+}

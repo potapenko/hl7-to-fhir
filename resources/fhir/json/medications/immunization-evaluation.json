@@ -1,0 +1,22 @@
+{
+  "resourceType" : "ImmunizationEvaluation",
+  // from Resource: id, meta, implicitRules, and language
+  // from DomainResource: text, contained, extension, and modifierExtension
+  "identifier" : [{ Identifier }], // Business identifier
+  "status" : "<code>", // R!  completed | entered-in-error
+  "patient" : { Reference(Patient) }, // R!  Who this evaluation is for
+  "date" : "<dateTime>", // Date evaluation was performed
+  "authority" : { Reference(Organization) }, // Who is responsible for publishing the recommendations
+  "targetDisease" : { CodeableConcept }, // R!  Evaluation target disease
+  "immunizationEvent" : { Reference(Immunization) }, // R!  Immunization being evaluated
+  "doseStatus" : { CodeableConcept }, // R!  Status of the dose relative to published recommendations
+  "doseStatusReason" : [{ CodeableConcept }], // Reason for the dose status
+  "description" : "<string>", // Evaluation notes
+  "series" : "<string>", // Name of vaccine series
+  // doseNumber[x]: Dose number within series. One of these 2:
+  "doseNumberPositiveInt" : "<positiveInt>",
+  "doseNumberString" : "<string>",
+  // seriesDoses[x]: Recommended number of doses for immunity. One of these 2:
+  "seriesDosesPositiveInt" : "<positiveInt>"
+  "seriesDosesString" : "<string>"
+}

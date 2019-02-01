@@ -1,0 +1,31 @@
+{
+  "resourceType" : "Media",
+  // from Resource: id, meta, implicitRules, and language
+  // from DomainResource: text, contained, extension, and modifierExtension
+  "identifier" : [{ Identifier }], // Identifier(s) for the image
+  "basedOn" : [{ Reference(ServiceRequest|CarePlan) }], // Procedure that caused this media to be created
+  "partOf" : [{ Reference(Any) }], // Part of referenced event
+  "status" : "<code>", // R!  preparation | in-progress | not-done | suspended | aborted | completed | entered-in-error | unknown
+  "type" : { CodeableConcept }, // Classification of media as image, video, or audio
+  "modality" : { CodeableConcept }, // The type of acquisition equipment/process
+  "view" : { CodeableConcept }, // Imaging view, e.g. Lateral or Antero-posterior
+  "subject" : { Reference(Patient|Practitioner|PractitionerRole|Group|Device|
+   Specimen|Location) }, // Who/What this Media is a record of
+  "encounter" : { Reference(Encounter) }, // Encounter associated with media
+  // created[x]: When Media was collected. One of these 2:
+  "createdDateTime" : "<dateTime>",
+  "createdPeriod" : { Period },
+  "issued" : "<instant>", // Date/Time this version was made available
+  "operator" : { Reference(Practitioner|PractitionerRole|Organization|
+   CareTeam|Patient|Device|RelatedPerson) }, // The person who generated the image
+  "reasonCode" : [{ CodeableConcept }], // Why was event performed?
+  "bodySite" : { CodeableConcept }, // Observed body part
+  "deviceName" : "<string>", // Name of the device/manufacturer
+  "device" : { Reference(Device|DeviceMetric|Device) }, // Observing Device
+  "height" : "<positiveInt>", // Height of the image in pixels (photo/video)
+  "width" : "<positiveInt>", // Width of the image in pixels (photo/video)
+  "frames" : "<positiveInt>", // Number of frames if > 1 (photo)
+  "duration" : <decimal>, // Length in seconds (audio / video)
+  "content" : { Attachment }, // R!  Actual Media - reference or data
+  "note" : [{ Annotation }] // Comments made about the media
+}

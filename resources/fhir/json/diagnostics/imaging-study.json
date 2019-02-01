@@ -1,0 +1,49 @@
+{
+  "resourceType" : "ImagingStudy",
+  // from Resource: id, meta, implicitRules, and language
+  // from DomainResource: text, contained, extension, and modifierExtension
+  "identifier" : [{ Identifier }], // Identifiers for the whole study
+  "status" : "<code>", // R!  registered | available | cancelled | entered-in-error | unknown
+  "modality" : [{ Coding }], // All series modality if actual acquisition modalities 
+  "subject" : { Reference(Patient|Device|Group) }, // R!  Who or what is the subject of the study
+  "encounter" : { Reference(Encounter) }, // Encounter with which this imaging study is associated
+  "started" : "<dateTime>", // When the study was started
+  "basedOn" : [{ Reference(CarePlan|ServiceRequest|Appointment|
+   AppointmentResponse|Task) }], // Request fulfilled
+  "referrer" : { Reference(Practitioner|PractitionerRole) }, // Referring physician
+  "interpreter" : [{ Reference(Practitioner|PractitionerRole) }], // Who interpreted images
+  "endpoint" : [{ Reference(Endpoint) }], // Study access endpoint
+  "numberOfSeries" : "<unsignedInt>", // Number of Study Related Series
+  "numberOfInstances" : "<unsignedInt>", // Number of Study Related Instances
+  "procedureReference" : { Reference(Procedure) }, // The performed Procedure reference
+  "procedureCode" : [{ CodeableConcept }], // The performed procedure code 
+  "location" : { Reference(Location) }, // Where ImagingStudy occurred
+  "reasonCode" : [{ CodeableConcept }], // Why the study was requested
+  "reasonReference" : [{ Reference(Condition|Observation|Media|
+   DiagnosticReport|DocumentReference) }], // Why was study performed
+  "note" : [{ Annotation }], // User-defined comments
+  "description" : "<string>", // Institution-generated description
+  "series" : [{ // Each study has one or more series of instances
+    "uid" : "<id>", // R!  DICOM Series Instance UID for the series
+    "number" : "<unsignedInt>", // Numeric identifier of this series
+    "modality" : { Coding }, // R!  The modality of the instances in the series 
+    "description" : "<string>", // A short human readable summary of the series
+    "numberOfInstances" : "<unsignedInt>", // Number of Series Related Instances
+    "endpoint" : [{ Reference(Endpoint) }], // Series access endpoint
+    "bodySite" : { Coding }, // Body part examined
+    "laterality" : { Coding }, // Body part laterality
+    "specimen" : [{ Reference(Specimen) }], // Specimen imaged
+    "started" : "<dateTime>", // When the series started
+    "performer" : [{ // Who performed the series
+      "function" : { CodeableConcept }, // Type of performance
+      "actor" : { Reference(Practitioner|PractitionerRole|Organization|CareTeam|
+     Patient|Device|RelatedPerson) } // R!  Who performed the series
+    }],
+    "instance" : [{ // A single SOP instance from the series
+      "uid" : "<id>", // R!  DICOM SOP Instance UID
+      "sopClass" : { Coding }, // R!  DICOM class type 
+      "number" : "<unsignedInt>", // The number of this instance in the series
+      "title" : "<string>" // Description of instance
+    }]
+  }]
+}

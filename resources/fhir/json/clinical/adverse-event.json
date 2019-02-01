@@ -1,0 +1,37 @@
+{
+  "resourceType" : "AdverseEvent",
+  // from Resource: id, meta, implicitRules, and language
+  // from DomainResource: text, contained, extension, and modifierExtension
+  "identifier" : { Identifier }, // Business identifier for the event
+  "actuality" : "<code>", // R!  actual | potential
+  "category" : [{ CodeableConcept }], // product-problem | product-quality | product-use-error | wrong-dose | incorrect-prescribing-information | wrong-technique | wrong-route-of-administration | wrong-rate | wrong-duration | wrong-time | expired-drug | medical-device-use-error | problem-different-manufacturer | unsafe-physical-environment
+  "event" : { CodeableConcept }, // Type of the event itself in relation to the subject
+  "subject" : { Reference(Patient|Group|Practitioner|RelatedPerson) }, // R!  Subject impacted by event
+  "encounter" : { Reference(Encounter) }, // Encounter created as part of
+  "date" : "<dateTime>", // When the event occurred
+  "detected" : "<dateTime>", // When the event was detected
+  "recordedDate" : "<dateTime>", // When the event was recorded
+  "resultingCondition" : [{ Reference(Condition) }], // Effect on the subject due to this event
+  "location" : { Reference(Location) }, // Location where adverse event occurred
+  "seriousness" : { CodeableConcept }, // Seriousness of the event
+  "severity" : { CodeableConcept }, // mild | moderate | severe
+  "outcome" : { CodeableConcept }, // resolved | recovering | ongoing | resolvedWithSequelae | fatal | unknown
+  "recorder" : { Reference(Patient|Practitioner|PractitionerRole|
+   RelatedPerson) }, // Who recorded the adverse event
+  "contributor" : [{ Reference(Practitioner|PractitionerRole|Device) }], // Who  was involved in the adverse event or the potential adverse event
+  "suspectEntity" : [{ // The suspected agent causing the adverse event
+    "instance" : { Reference(Immunization|Procedure|Substance|Medication|
+    MedicationAdministration|MedicationStatement|Device) }, // R!  Refers to the specific entity that caused the adverse event
+    "causality" : [{ // Information on the possible cause of the event
+      "assessment" : { CodeableConcept }, // Assessment of if the entity caused the event
+      "productRelatedness" : "<string>", // AdverseEvent.suspectEntity.causalityProductRelatedness
+      "author" : { Reference(Practitioner|PractitionerRole) }, // AdverseEvent.suspectEntity.causalityAuthor
+      "method" : { CodeableConcept } // ProbabilityScale | Bayesian | Checklist
+    }]
+  }],
+  "subjectMedicalHistory" : [{ Reference(Condition|Observation|
+   AllergyIntolerance|FamilyMemberHistory|Immunization|Procedure|Media|
+   DocumentReference) }], // AdverseEvent.subjectMedicalHistory
+  "referenceDocument" : [{ Reference(DocumentReference) }], // AdverseEvent.referenceDocument
+  "study" : [{ Reference(ResearchStudy) }] // AdverseEvent.study
+}

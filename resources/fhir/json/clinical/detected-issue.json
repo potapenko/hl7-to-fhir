@@ -1,0 +1,26 @@
+{
+  "resourceType" : "DetectedIssue",
+  // from Resource: id, meta, implicitRules, and language
+  // from DomainResource: text, contained, extension, and modifierExtension
+  "identifier" : [{ Identifier }], // Unique id for the detected issue
+  "status" : "<code>", // R!  registered | preliminary | final | amended +
+  "code" : { CodeableConcept }, // Issue Category, e.g. drug-drug, duplicate therapy, etc.
+  "severity" : "<code>", // high | moderate | low
+  "patient" : { Reference(Patient) }, // Associated patient
+  // identified[x]: When identified. One of these 2:
+  "identifiedDateTime" : "<dateTime>",
+  "identifiedPeriod" : { Period },
+  "author" : { Reference(Practitioner|PractitionerRole|Device) }, // The provider or device that identified the issue
+  "implicated" : [{ Reference(Any) }], // Problem resource
+  "evidence" : [{ // Supporting evidence
+    "code" : [{ CodeableConcept }], // Manifestation
+    "detail" : [{ Reference(Any) }] // Supporting information
+  }],
+  "detail" : "<string>", // Description and context
+  "reference" : "<uri>", // Authority for issue
+  "mitigation" : [{ // Step taken to address
+    "action" : { CodeableConcept }, // R!  What mitigation?
+    "date" : "<dateTime>", // Date committed
+    "author" : { Reference(Practitioner|PractitionerRole) } // Who is committing?
+  }]
+}

@@ -1,0 +1,81 @@
+{
+  "resourceType" : "MolecularSequence",
+  // from Resource: id, meta, implicitRules, and language
+  // from DomainResource: text, contained, extension, and modifierExtension
+  "identifier" : [{ Identifier }], // Unique ID for this particular sequence. This is a FHIR-defined id
+  "type" : "<code>", // aa | dna | rna
+  "coordinateSystem" : <integer>, // R!  Base number of coordinate system (0 for 0-based numbering or coordinates, inclusive start, exclusive end, 1 for 1-based numbering, inclusive start, inclusive end)
+  "patient" : { Reference(Patient) }, // Who and/or what this is about
+  "specimen" : { Reference(Specimen) }, // Specimen used for sequencing
+  "device" : { Reference(Device) }, // The method for sequencing
+  "performer" : { Reference(Organization) }, // Who should be responsible for test result
+  "quantity" : { Quantity }, // The number of copies of the sequence of interest.  (RNASeq)
+  "referenceSeq" : { // A sequence used as reference
+    "chromosome" : { CodeableConcept }, // Chromosome containing genetic finding
+    "genomeBuild" : "<string>", // The Genome Build used for reference, following GRCh build versions e.g. 'GRCh 37'
+    "orientation" : "<code>", // sense | antisense
+    "referenceSeqId" : { CodeableConcept }, // Reference identifier
+    "referenceSeqPointer" : { Reference(MolecularSequence) }, // A pointer to another MolecularSequence entity as reference sequence
+    "referenceSeqString" : "<string>", // A string to represent reference sequence
+    "strand" : "<code>", // watson | crick
+    "windowStart" : <integer>, // Start position of the window on the  reference sequence
+    "windowEnd" : <integer> // End position of the window on the reference sequence
+  },
+  "variant" : [{ // Variant in sequence
+    "start" : <integer>, // Start position of the variant on the  reference sequence
+    "end" : <integer>, // End position of the variant on the reference sequence
+    "observedAllele" : "<string>", // Allele that was observed
+    "referenceAllele" : "<string>", // Allele in the reference sequence
+    "cigar" : "<string>", // Extended CIGAR string for aligning the sequence with reference bases
+    "variantPointer" : { Reference(Observation) } // Pointer to observed variant information
+  }],
+  "observedSeq" : "<string>", // Sequence that was observed
+  "quality" : [{ // An set of value as quality of sequence
+    "type" : "<code>", // R!  indel | snp | unknown
+    "standardSequence" : { CodeableConcept }, // Standard sequence for comparison
+    "start" : <integer>, // Start position of the sequence
+    "end" : <integer>, // End position of the sequence
+    "score" : { Quantity }, // Quality score for the comparison
+    "method" : { CodeableConcept }, // Method to get quality
+    "truthTP" : <decimal>, // True positives from the perspective of the truth data
+    "queryTP" : <decimal>, // True positives from the perspective of the query data
+    "truthFN" : <decimal>, // False negatives
+    "queryFP" : <decimal>, // False positives
+    "gtFP" : <decimal>, // False positives where the non-REF alleles in the Truth and Query Call Sets match
+    "precision" : <decimal>, // Precision of comparison
+    "recall" : <decimal>, // Recall of comparison
+    "fScore" : <decimal>, // F-score
+    "roc" : { // Receiver Operator Characteristic (ROC) Curve
+      "score" : [<integer>], // Genotype quality score
+      "numTP" : [<integer>], // Roc score true positive numbers
+      "numFP" : [<integer>], // Roc score false positive numbers
+      "numFN" : [<integer>], // Roc score false negative numbers
+      "precision" : [<decimal>], // Precision of the GQ score
+      "sensitivity" : [<decimal>], // Sensitivity of the GQ score
+      "fMeasure" : [<decimal>] // FScore of the GQ score
+    }
+  }],
+  "readCoverage" : <integer>, // Average number of reads representing a given nucleotide in the reconstructed sequence
+  "repository" : [{ // External repository which contains detailed report related with observedSeq in this resource
+    "type" : "<code>", // R!  directlink | openapi | login | oauth | other
+    "url" : "<uri>", // URI of the repository
+    "name" : "<string>", // Repository's name
+    "datasetId" : "<string>", // Id of the dataset that used to call for dataset in repository
+    "variantsetId" : "<string>", // Id of the variantset that used to call for variantset in repository
+    "readsetId" : "<string>" // Id of the read
+  }],
+  "pointer" : [{ Reference(MolecularSequence) }], // Pointer to next atomic sequence
+  "structureVariant" : [{ // Structural variant
+    "variantType" : { CodeableConcept }, // Structural variant change type 
+    "exact" : <boolean>, // Does the structural variant have base pair resolution breakpoints?
+    "length" : <integer>, // Structural variant length
+    "outer" : { // Structural variant outer
+      "start" : <integer>, // Structural variant outer start
+      "end" : <integer> // Structural variant outer end
+    },
+    "inner" : { // Structural variant inner
+      "start" : <integer>, // Structural variant inner start
+      "end" : <integer> // Structural variant inner end
+    }
+  }]
+}
